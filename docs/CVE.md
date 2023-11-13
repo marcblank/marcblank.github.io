@@ -101,15 +101,15 @@ These are the valid functions that can be used in Expressions.
 | `Sqrt`    | Returns the square root of the specified number |
 | `Tan`    | Returns the tangent of the specified angle
 | `Truncate`    | Calculates an integral part of a number |
-| `if`    | Returns whether an element is in a set of values |
+| `if`    | Returns whether an element is in a set of values - if(expr, then, else) |
 | `in`    | Returns a value based on a condition |
 
 Here are the valid operators in Expressions
 
 | Method      | Description                          |
 | ----------- | ------------------------------------ |
-| `Arithmetical`    | -, +, *, /, %, ++, --|
-| `Logical`    | &&, \|\|, !|
-| `Bitwise`    | &, \|, ^, ~, <<, >>|
-| `Comparison`    | ==,!=, >, <, >=, <=|
+| `Arithmetical`    | - , &ensp; + ,&ensp;  *,&ensp; /,&ensp; %|
+| `Logical`    | &&, &ensp; \|\|, &ensp;  !|
+| `Bitwise`    | &, &ensp;\|,&ensp; ^, &ensp;~, &ensp;<<,&ensp; >>|
+| `Comparison`    | ==,&ensp;!=,&ensp; >,&ensp; <,&ensp; >=, &ensp;<=|
 
