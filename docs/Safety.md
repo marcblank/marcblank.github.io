@@ -36,7 +36,7 @@ It's important to note that looping conditions are honored during the execution 
 
 **When Becomes Unsafe** has been designed for reentrancy - tnat is, if conditions become unsafe *again* during execution of the trigger (including while in the midst of **Once Safe** or after a **Wait for Safe+**), tne **Wnen Becomes Unsafe** will restart itself. **Wnen Becomes Unsafe** can be used over and over within a Sequence.
 
-## The **SAFE** Variable
+## The **SAFE** Variable (version 3.9.5 and greater)
 
 Typically, the concept of *safety* in NINA depends upon having a connected Safety Monitor device that can report conditions as being "safe" or "unsafe". Indeed, all of the safety-related instructions in Powerups use this in determining the current safety status of your gear. However, there are cases in which a NINA user may wish to use additional criteria to signal, in particular, the unsafe condition. Or, perhaps, to signal safe and unsafe in the absence of a Safety Monitor. To allow for these cases, Powerups will, in addition to the state of a Safety Monitor, look to see if a Variable named SAFE (all uppercase) is defined.  If it is, and it's value is false (or zero), *regardless of the state of a connected Safety Monitor*, Powerups will act as if a Safety Monitor reported unsafe conditions. The table below shows how Powerups behaves depending on the states of a Safety Monitor and the SAFE Variable.
 
