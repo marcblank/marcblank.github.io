@@ -3,6 +3,7 @@ Sequencer Powerups has a number of instructions that help with the handling of s
 Generally, imagers will want to execute some kind of "subroutine" when their gear becomes "unsafe", and then  return to their imaging if and when their gear becomes "safe" again. The following instructions were designed exactly for this purpose.
 
 ## When Becomes Unsafe
+
 The **When Becomes Unssafe** trigger allows you to specify a set of instructions to execute within a couple of seconds of your gear becoming "unsafe". Typically, these intructions might include **Close Dome Shutter**, **Park Scope**, an instruction to send yourself a notification (as with the Ground Station plugin), and things of that sort.
 
 ![](WBU.png)
@@ -34,3 +35,17 @@ It's important to note that looping conditions are honored during the execution 
 ## Reentrancy
 
 **When Becomes Unsafe** has been designed for reentrancy - tnat is, if conditions become unsafe *again* during execution of the trigger (including while in the midst of **Once Safe** or after a **Wait for Safe+**), tne **Wnen Becomes Unsafe** will restart itself. **Wnen Becomes Unsafe** can be used over and over within a Sequence.
+
+## The **SAFE** Variable
+
+Typically, the concept of *safety* in NINA depends upon having a connected Safety Monitor device that can report conditions as being "safe" or "unsafe". Indeed, all of the safety-related instructions in Powerups use this in determining the current safety status of your gear. However, there are cases in which a NINA user may wish to use additional criteria to signal, in particular, the unsafe condition. Or, perhaps, to signal safe and unsafe in the absence of a Safety Monitor. To allow for these cases, Powerups will, in addition to the state of a Safety Monitor, look to see if a Variable named SAFE (all uppercase) is defined.  If it is, and it's value is false (or zero), *regardless of the state of a connected Safety Monitor*, Powerups will act as if a Safety Monitor reported unsafe conditions. The table below shows how Powerups behaves depending on the states of a Safety Monitor and the SAFE Variable.
+
+
+| Safety Monitor     | SAFE Variable           |     Result     |
+| ----------- | -------------------- | -------------- |
+| Safe      | Undefined or true | Safe  |
+| Safe      | Defined and false | Unsafe  |
+| Unsafe     | Any value | Unsafe  |
+| Not connected     | Undefined or true | Safe |
+| Not connected     | Defined and false | Unsafe  |
+
