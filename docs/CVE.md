@@ -9,6 +9,10 @@ An Expression in Sequencer Powerups is pretty much any kind of mathematical expr
 Expressions can be used in various "enhanced" instructions (enhanced in the sense that they accept Expressions in place of numbers), as well as some new instructions like **If** and **Loop While**. Enhanced instructions are named with "+" appended to the instruction name (e.g. **Take Exposure +**, **Cool Camera +**, etc).
 So, for example, in **Take Exposure +**, the value of Exposure Time might be `10` or `ExpTime` (assuming `ExpTime` is defined as a Constant or Variable; see below) or even `ExpTime / 3` or a conditional like `if (rgb, ExpTime, ExpTime*2/3)`.  In the latter case, the "if" predicate takes three arguments: something can be tested for true/false (1/0), a value if "true", and a value if "false". Sometime, I'll add a list of valid operators.
 
+### What's Valid in an Expression
+
+Valid tokens in Expressions include numbers, parentheses, function and operator names (see [Appendix](#appendix-functions-and-operators-in-expressions)), Constant and Variable names, the names of gauges, switches, and weather data (if these devices are connected in NINA), a dome's ShutterState (with Dome connected), a camera's SensorTemp (with Camera connected), and the reserved names **TIME** and **SAFE** (see [ReservedVariables](#reserved-variables)).
+
 ## Constants
 
 A Constant in Powerups is created using the **Define Constant** instruction; enter a name for the Constant and a value, which can be any valid expression (if the value refers to a Constant, it needs to have been defined in the same instruction set or in a parent of the instruction set).  **Define Constant** is *self-executing* and continuously re-evaluated!  This means that Constants are "live" as they are read into the sequencer, and their values update as required, based on changes to other Constants referred to.  When the Sequencer executes a **Define Constant** command, literally nothing happens!
@@ -33,9 +37,26 @@ The **Set Variable** instruction can be used to change the value of a previously
 
 Just as in a procedural computer language, if you are looping through an instruction set, any variables defined in that set are reset to having no value before the loop repeats!
 
-## If and Loop While
+## If (instruction), When (trigger), and Loop While (condition)
 
-The **If** instruction (previously If Constant) evaluates the given expression and runs the specified instruction if that expression is not false (not 0 or "false").   This instruction has been around for a number of versions of Powerups.
+### If
+
+The **If** instruction (previously If Constant) evaluates the given expression and runs the specified instructions if that expression is not false (not 0 or "false"). This instruction was previously named **If Constant**.
+
+![](If.png)
+
+### When
+
+The **When** trigger (previously When Switch) triggers *when* the given expression is not false (not 0 or "false') and runs the specified instructions. There is a **Once Only** toggle in this instruction; setting this to ON will cause this trigger to run only once during execution of your sequence.
+
+#### Warnings for the When Trigger
+ If you don't somehow arrange for the expression to become false during the execution of the included instructions, the **When** trigger will run every five seconds (after finishing those instructions).  If you want to keep this from happening, set the **Once Only** toggle to ON
+
+ Unlike other Triggers, the **When** trigger trips within seconds of the expression becoming true, even interrupting instructions in process.  This is very much unlike regular NINA triggers which trip *between* instructions.
+
+![](When.png)
+
+### Loop While
 
 **Loop While** is new; it's a standard NINA "Conditional" and gets placed with other conditionals in an instruction set.   When queried (every 5 seconds or so while a sequence is running), it evaluates the given expression and terminates the loop if the result is "false" or 0.
 
@@ -47,9 +68,14 @@ Note the red "i" (for "Information") icon in the **Loop While** instruction.  Ho
 
 ![](InfoDropdown.png)
 
+## Reserved Variables
 
+The following Variable names are reserved:
 
- 
+**SAFE** &ensp; - &ensp; See the documentation for "Safety"
+
+**TIME** &ensp; - &ensp; The current time in seconds since NINA was started, with an accuracy of 10 seconds or so. This is not intended, obviously, for highly accurate timing, but can be used, for example, with the **When** trigger to take actions at various intervals.
+
 ## Odds and Ends
 
 •	Wherever Constants of Variables are used, the current values are shown in brackets { }, in green if valid and in orange if invalid (not defined, etc.)  These colors are currently fixed, and only appear nicely in certain color schemes; sorry about that!  Here's a rather useless example:
