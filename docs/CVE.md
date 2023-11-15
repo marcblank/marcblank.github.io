@@ -1,10 +1,10 @@
-# Constants, Variables, and Expressions
+# **Constants, Variables, and Expressions**
 
 *Variables are a new feature in Powerups 3.9 and above and are in "beta", meaning that some issues are to be expected.  I will fix problems in a timely manner (with any luck); please report issues to me in Discord!*
 
-## Expressions
+## **Expressions**
 
-An Expression in Sequencer Powerups is pretty much any kind of mathematical expression using numbers (fixed or floating point), Constants, and Variables, plus Switch values, Gauge values, and Weather values (plus Camera sensor temperature).  *Note that Switch, Gauge, Weather, and Camera values are only available if the appropriate gear is connected!*
+An Expression in Sequencer Powerups is pretty much any kind of mathematical expression using numbers (fixed or floating point), Constants, and Variables, plus Switch values, Gauge values, and Weather values (plus Camera sensor temperature and Dome shutter status).  *Note that Switch, Gauge, Weather, Camera, and Dome values are only available if the appropriate gear is connected!*
 
 Expressions can be used in various "enhanced" instructions (enhanced in the sense that they accept Expressions in place of numbers), as well as some new instructions like **If** and **Loop While**. Enhanced instructions are named with "+" appended to the instruction name (e.g. **Take Exposure +**, **Cool Camera +**, etc).
 So, for example, in **Take Exposure +**, the value of Exposure Time might be `10` or `ExpTime` (assuming `ExpTime` is defined as a Constant or Variable; see below) or even `ExpTime / 3` or a conditional like `if (rgb, ExpTime, ExpTime*2/3)`.  In the latter case, the "if" predicate takes three arguments: something can be tested for true/false (1/0), a value if "true", and a value if "false". Sometime, I'll add a list of valid operators.
@@ -13,7 +13,7 @@ So, for example, in **Take Exposure +**, the value of Exposure Time might be `10
 
 Valid tokens in Expressions include numbers, parentheses, function and operator names (see [Appendix](#appendix-functions-and-operators-in-expressions)), Constant and Variable names, the names of gauges, switches, and weather data (if these devices are connected in NINA), a dome's ShutterState (with Dome connected), a camera's SensorTemp (with Camera connected), and the reserved names **TIME** and **SAFE** (see [ReservedVariables](#reserved-variables)).
 
-## Constants
+## **Constants**
 
 A Constant in Powerups is created using the **Define Constant** instruction; enter a name for the Constant and a value, which can be any valid expression (if the value refers to a Constant, it needs to have been defined in the same instruction set or in a parent of the instruction set).  **Define Constant** is *self-executing* and continuously re-evaluated!  This means that Constants are "live" as they are read into the sequencer, and their values update as required, based on changes to other Constants referred to.  When the Sequencer executes a **Define Constant** command, literally nothing happens!
 
@@ -28,7 +28,7 @@ Constants have block scope, which means that a Constant has value in the instruc
 ![](BlockScope.png)
 
 
-## Variables
+## **Variables**
 
 A Variable in Powerups is more similar to a traditional computer language variable; it also uses "block scope" (see above).   A Variable is defined using the **Define Variable** instruction, which is entirely analogous to the **Define Constant** instruction, except that Variable definitions are not self-executing - the Variable does not exist prior to the execution of the Define Variable instruction.   References to the Variable "below" it in the code will show `Undefined: <varname>` until the instruction gets executed.
 The **Set Variable** instruction can be used to change the value of a previously defined Variable.  For a value, any expression can be used - including the use of Constants and Variables that have been previously defined.  The simplest form of this might this:
@@ -37,7 +37,7 @@ The **Set Variable** instruction can be used to change the value of a previously
 
 Just as in a procedural computer language, if you are looping through an instruction set, any variables defined in that set are reset to having no value before the loop repeats!
 
-## If (instruction), When (trigger), and Loop While (condition)
+## **If (instruction), When (trigger), and Loop While (condition)**
 
 ### If
 
@@ -76,7 +76,7 @@ The following Variable names are reserved:
 
 **TIME** &ensp; - &ensp; The current time in seconds since NINA was started, with an accuracy of 10 seconds or so. This is not intended, obviously, for highly accurate timing, but can be used, for example, with the **When** trigger to take actions at various intervals.
 
-## Odds and Ends
+## **Odds and Ends**
 
 •	Wherever Constants of Variables are used, the current values are shown in brackets { }, in green if valid and in orange if invalid (not defined, etc.)  These colors are currently fixed, and only appear nicely in certain color schemes; sorry about that!  Here's a rather useless example:
 
@@ -97,12 +97,12 @@ The following Variable names are reserved:
 ![](Breakpoint.png)
 
  
-## Summary
+## **Summary**
 
  Constants have the same value throughout a sequence (in their scope) and do not change during sequence execution (or more precisely are not changed *because* of sequence execution).  A human can change them, and that change takes effect immediately, but the sequence itself does not change them.  Variables, on the other hand, are created and changed by sequence execution, without human intervention.  However, you can always manually change the values of both Variables and Constants during execution, just as you can reorder instructions and do other dastardly things to yout sequence (with great power comes great responsibility).  *Just remember that manual changes can have side effects that might be unexpected!*
 
 
-## Appendix: Functions and Operators in Expressions
+## **Appendix: Functions and Operators in Expressions**
 
 These are the valid functions that can be used in Expressions.
 
