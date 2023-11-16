@@ -70,11 +70,13 @@ Note the red "i" (for "Information") icon in the **Loop While** instruction.  Ho
 
 ## Reserved Variables
 
-The following Variable names are reserved:
+The following Variable/Constant names are reserved:
 
 **SAFE** &ensp; - &ensp; See the documentation for "Safety"
 
 **TIME** &ensp; - &ensp; The current time in seconds since NINA was started, with an accuracy of 10 seconds or so. This is not intended, obviously, for highly accurate timing, but can be used, for example, with the **When** trigger to take actions at various intervals.
+
+Dome shutter status names:  **ShutterNone, ShutterOpen, ShutterClosed, ShutterOpening, ShutterClosing, SutterError**
 
 ## **Odds and Ends**
 
