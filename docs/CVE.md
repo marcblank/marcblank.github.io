@@ -39,9 +39,11 @@ Just as in a procedural computer language, if you are looping through an instruc
 
 ## **If (instruction), When (trigger), and Loop While (condition)**
 
-### If
+### If and IfThenElse
 
-The **If** instruction (previously If Constant) evaluates the given expression and runs the specified instructions if that expression is not false (not 0 or "false"). This instruction was previously named **If Constant**.
+The **If** instruction (previously If Constant) evaluates the given Expression and runs the specified instructions if that expression is not false (not 0 or "false"). This instruction was previously named **If Constant**.
+
+The **IfThenElse** instruction (3.9.7) adds the ability to specify instructions to execute if the Expression is false.
 
 ![](If.png)
 
