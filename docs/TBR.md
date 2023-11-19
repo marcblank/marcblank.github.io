@@ -67,6 +67,8 @@ A **Template** can contain any number of instructions, instruction sets, **Templ
 
 ![](SeqIcons.png)
 
+These things are described more fully, but with some inconsistencies in terminology, at [NINA Advanced Sequencer](https://nighttime-imaging.eu/docs/develop/site/sequencer/advanced/advanced/)
+
 
 
 
