@@ -3,9 +3,15 @@
 
 ## Take Exposure +, Take Many Exposures +, and Smart Exposure +
 
-These imaging instructions allow Expressions for number of exposures, exposure time, gain, and dither.  In the examples below, the Constants used are defined elsewhere. *Note: Offset, filter, and binning are planned for the future.*
+These imaging instructions allow Expressions for number of exposures, exposure time, gain, offset, and dither.  In the examples below, the Constants used are defined elsewhere. *Note: Filter, and binning are planned for the future.*
 
 ![](Exposure.png)
+
+## Take Trained Flat Exposure +, Take Trained Dark Flat Exposure +
+
+These imaging instructions allow Expressions for number of exposures, gain, and offset.  In the examples below, the Constants used are defined elsewhere. *Note: Filter, and binning are planned for the future.*
+
+![](Trained.png)
 
 ## Cool Camera +
 
