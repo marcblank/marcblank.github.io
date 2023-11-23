@@ -27,7 +27,6 @@ Constants have block scope, which means that a Constant has value in the instruc
 
 ![](BlockScope.png)
 
-
 ## **Variables**
 
 A Variable in Powerups is more similar to a traditional computer language variable; it also uses "block scope" (see above).   A Variable is defined using the **Define Variable** instruction, which is entirely analogous to the **Define Constant** instruction, except that Variable definitions are not self-executing - the Variable does not exist prior to the execution of the Define Variable instruction.   References to the Variable "below" it in the code will show `Undefined: <varname>` until the instruction gets executed.
@@ -86,7 +85,7 @@ Dome shutter status names:  **ShutterNone, ShutterOpen, ShutterClosed, ShutterOp
 
 ![](GreenOrange.png)
  
-•	Up to 8 "global" constants can be defined on the plugin page; they are NOT as yet profile-specific, but that feature should be coming soon.
+•	Up to 10 "global" constants can be defined on the plugin page; each of them can be set for *all* of your NINA Profiles, or can be set on a per-profile basis.
 
 ![](Globals.png)
 
