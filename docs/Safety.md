@@ -28,7 +28,7 @@ Tne two examples above accomplish the same thing; **Once Safe** is more pleasing
 
 ## Looping Considerations
 
-It's important to note that looping conditions are honored during the execution of a **When Becomes Un safe** instruction, thereby allowing your sequences to naturally terminate cleanly even if conditions never become safe again.  For example, in the case below, tne **When Becomes Unsafe** will stop when the enclosing **Loop Until Time** expires at Astronomical Dawn, even if the sequencer is sitting in a **Wait Until Safe+**
+It's important to note that looping conditions are honored during the execution of a **When Becomes Unsafe** instruction, thereby allowing your sequences to naturally terminate cleanly even if conditions never become safe again.  For example, in the case below, tne **When Becomes Unsafe** will stop when the enclosing **Loop Until Time** expires at Astronomical Dawn, even if the sequencer is sitting in a **Wait Until Safe+**
 
 ![](WBULoop.png)
 
