@@ -7,7 +7,7 @@ These imaging instructions allow Expressions for number of exposures, exposure t
 
 ![](Exposure.png)
 
-## Take Trained Flat Exposure +, Take Trained Dark Flat Exposure +
+## Trained Flat Exposure +, Trained Dark Flat Exposure +
 
 These imaging instructions allow Expressions for number of exposures, gain, and offset.  In the examples below, the Constants used are defined elsewhere. *Note: Filter, and binning are planned for the future.*
 
