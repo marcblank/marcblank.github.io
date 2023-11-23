@@ -1,6 +1,6 @@
 # Special Case Triggers
 
-Sequencer Powerups defines three new Triggers that can be helpful in some circumstances.
+Sequencer Powerups defines four new Triggers that can be helpful in some circumstances.
 
 ## DIY Trigger
 
