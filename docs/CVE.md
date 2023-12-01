@@ -69,6 +69,13 @@ Note the red "i" (for "Information") icon in the **Loop While** instruction.  Ho
 
 ![](InfoDropdown.png)
 
+Here's an interesting example that uses these instructions to implement a timeout. The **Loop While** is basically running for up to 60 seconds OR until the **confirmed** variable becomes true.  Each time through the loop, the **If** instruction checks whether a switch (in this case, **GuideScopeOpen**) has become "true"; if so, the **Set Variable** instruction sets **confirmed** to true.  This ends the loop.
+
+![](TimeLoop.png)
+
+Presumably, when this loop finishes, another test of **GuideScopeOpen** will be used to determine whether the opening procedure has succeeded. If not, perhaps a **Ground Station plugin** message will be sent, or the sequence terminated.
+
+
 ## Reserved Variables
 
 The following Variable/Constant names are reserved:
