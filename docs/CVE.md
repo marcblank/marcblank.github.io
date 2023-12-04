@@ -84,7 +84,13 @@ The following Variable/Constant names are reserved:
 
 **TIME** &ensp; - &ensp; The current time in seconds since NINA was started, with an accuracy of 10 seconds or so. This is not intended, obviously, for highly accurate timing, but can be used, for example, with the **When** trigger to take actions at various intervals.
 
-Dome shutter status names:  **ShutterNone, ShutterOpen, ShutterClosed, ShutterOpening, ShutterClosing, ShutterError**
+Dome shutter status names:  **DomeStatus, ShutterNone, ShutterOpen, ShutterClosed, ShutterOpening, ShutterClosing, ShutterError**
+
+Camera names: **SensorTemp**
+
+Flat Device names: **CoverState, CoverOpen, CoverClosed, CoverNeitherOpenNorClosed, CoverUnknown, CoverError**
+
+Filter Wheel names: **CurrentFilter, Filter_name**, where "name" is the name of the filter with all non-alphanumeric characters removed.  So a filter named "My IR Filter" must be referred to as Filter_MyIRFilter.
 
 ## **Odds and Ends**
 
