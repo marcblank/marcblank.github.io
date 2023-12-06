@@ -127,8 +127,8 @@ These are the valid functions that can be used in Expressions.
 | `Abs`       | Returns the absolute value of a specified number  |
 | `Acos`      | Returns the angle whose cosine is the specified number |
 | `Asin`    | Returns the angle whose sine is the specified number |
-| `Atan`    | Returns the angle whose sine is the specified number |
-| `Ceiling`    | Returns the angle whose tangent is the specified number |
+| `Atan`    | Returns the angle whose tangent is the specified number |
+| `Ceiling`    | Returns the smallest integer greater than or equal to the specified number |
 | `Cos`    | Returns the cosine of the specified angle |
 | `Exp`    | Returns e raised to the specified power |
 | `Floor`    | Returns the largest integer less than or equal to the specified number |
