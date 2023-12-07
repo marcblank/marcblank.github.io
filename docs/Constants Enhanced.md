@@ -22,3 +22,6 @@ This instruction can use Expressions both for the set temperature and duration.
 ## Move Focuser Relative +
 
 ![](Focus.png)
+
+## Switch Filter +
+
