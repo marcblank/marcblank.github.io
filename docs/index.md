@@ -4,4 +4,6 @@ The Sequencer Powerups plugin for NINA contains a variety of useful instructions
 
 Comments, suggestions, etc. always welcome at the #sequencer-powerups channel on the NINA Discord server.
 
+If you like, you can [Buy me a coffee!](https://www.buymeacoffee.com/marcblank)
+
 Marc
