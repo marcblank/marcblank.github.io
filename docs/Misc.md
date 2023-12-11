@@ -20,13 +20,13 @@ This is exactly the same as **Wait Indefinitely** except that it throws up a NIN
 
 This instruction ends the entire sequence that is running.
 
-# End Instruction Set
+## End Instruction Set
 
 ![](EIS.png)
 
 This instruction terminates the instruction you specify, anywhere in the hierarchy of running instructions.
 
-# Log
+## Log
 
 This instruction allows you to add arbitrary text to the NINA log. This might be useful when reporting bugs in being able to mark the time and cicrumstance under which something or other happened.
 
@@ -34,7 +34,7 @@ The **Log** instruction can be put *anywhere* in a sequence; it does *not* get e
 
 ![](Log.png)
 
-# Flip Rotator
+## Flip Rotator
 
 Some users will need to flip the rotator position after a Meridian Flip; this instruction will flip the rotator by 180 degrees
 
