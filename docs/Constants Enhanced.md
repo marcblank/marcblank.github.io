@@ -25,3 +25,8 @@ This instruction can use Expressions both for the set temperature and duration.
 
 ## Switch Filter +
 
+Allows use of a Constant or Variable to specify a filter.   Note that filter names are represented by variables named Filter_filterName, where *filterName* is the name of a filter without spaces or other punctuation.
+
+## Flip Rotator
+
+This instruction flips a connected Rotator by 180 degrees.

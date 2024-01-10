@@ -15,7 +15,7 @@ Valid tokens in Expressions include numbers, parentheses, function and operator 
 
 ## **Constants**
 
-A Constant in Powerups is created using the **Define Constant** instruction; enter a name for the Constant and a value, which can be any valid expression (if the value refers to a Constant, it needs to have been defined in the same instruction set or in a parent of the instruction set).  **Define Constant** is *self-executing* and continuously re-evaluated!  This means that Constants are "live" as they are read into the sequencer, and their values update as required, based on changes to other Constants referred to.  When the Sequencer executes a **Define Constant** command, literally nothing happens!
+A Constant in Powerups is created using the **Constant** instruction; enter a name for the Constant and a value, which can be any valid expression (if the value refers to a Constant, it needs to have been defined in the same instruction set or in a parent of the instruction set).  **Constant** is *self-executing* and continuously re-evaluated!  This means that Constants are "live" as they are read into the sequencer, and their values update as required, based on changes to other Constants referred to.  When the Sequencer executes a **Constant** instruction, literally nothing happens!
 
 The value of a Constant can be changed at any time (even when a Sequence is running) and all references to that Constant are updated semi-immediately (within a couple seconds).  It's not a very good constant, is it? :)
 
@@ -29,7 +29,7 @@ Constants have block scope, which means that a Constant has value in the instruc
 
 ## **Variables**
 
-A Variable in Powerups is more similar to a traditional computer language variable; it also uses "block scope" (see above).   A Variable is defined using the **Define Variable** instruction, which is entirely analogous to the **Define Constant** instruction, except that Variable definitions are not self-executing - the Variable does not exist prior to the execution of the Define Variable instruction.   References to the Variable "below" it in the code will show `Undefined: <varname>` until the instruction gets executed.
+A Variable in Powerups is more similar to a traditional computer language variable; it also uses "block scope" (see above).   A Variable is defined using the **Variable** instruction, which is entirely analogous to the **Constant** instruction, except that Variable definitions are not self-executing - the Variable does not exist prior to the execution of the Define Variable instruction.   References to the Variable "below" it in the code will show `Undefined: <varname>` until the instruction gets executed.
 The **Set Variable** instruction can be used to change the value of a previously defined Variable.  For a value, any expression can be used - including the use of Constants and Variables that have been previously defined.  The simplest form of this might this:
 
 ![](Variables.png)
@@ -61,7 +61,7 @@ The **When** trigger (previously When Switch) triggers *when* the given expressi
 
 **Loop While** is new; it's a standard NINA "Conditional" and gets placed with other conditionals in an instruction set.   When queried (every 5 seconds or so while a sequence is running), it evaluates the given expression and terminates the loop if the result is "false" or 0.
 
-Here’s an example of a very simple instruction set using **Define Variable**, **Set Variable**, and **Loop While**.  Note that the **Define Variable** instruction needs to be outside the loop; otherwise the `Lp` variable will be reset to 10 every time the loop is restarted!
+Here’s an example of a very simple instruction set using **Variable**, **Set Variable**, and **Loop While**.  Note that the **Variable** instruction needs to be outside the loop; otherwise the `Lp` variable will be reset to 10 every time the loop is restarted!
 
 ![](LoopWhile.png)
 
@@ -91,6 +91,8 @@ Camera names: **SensorTemp**
 Flat Device names: **CoverState, CoverOpen, CoverClosed, CoverNeitherOpenNorClosed, CoverUnknown, CoverError**
 
 Filter Wheel names: **CurrentFilter, Filter_name**, where "name" is the name of the filter with all non-alphanumeric characters removed.  So a filter named "My IR Filter" must be referred to as Filter_MyIRFilter.
+
+Safety Monitor: **IsSafe**
 
 ## **Odds and Ends**
 
