@@ -96,6 +96,8 @@ The following Variable/Constant names are reserved:
 
 **TIME** &ensp; - &ensp; The current time in seconds since NINA was started, with an accuracy of 10 seconds or so. This is not intended, obviously, for highly accurate timing, but can be used, for example, with the **When** trigger to take actions at various intervals.
 
+Safety Monitor: **IsSafe**
+
 Dome shutter status names:  **DomeStatus, ShutterNone, ShutterOpen, ShutterClosed, ShutterOpening, ShutterClosing, ShutterError**
 
 Camera names: **SensorTemp**
