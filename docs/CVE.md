@@ -75,7 +75,7 @@ Here's an interesting example that uses these instructions to implement a timeou
 
 Presumably, when this loop finishes, another test of **GuideScopeOpen** will be used to determine whether the opening procedure has succeeded. If not, perhaps a **Ground Station plugin** message will be sent, or the sequence terminated.
 
-### Constant/Variable Container
+## Constant/Variable Container
 
 A **Constant/Variable COntainer** is a special kind of container that can hold only **Constant**, **Variable**, and **Annotation** instructions.  Its intended use is to "clean up" sequences with many Constant and Variable definitions.  What makes this container special is that Constants and Variables defined within it *act as though they were defined at the level of the container (or Template by Reference) that they are enclosed in*.
 
