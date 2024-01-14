@@ -26,6 +26,10 @@ This instruction ends the entire sequence that is running.
 
 This instruction terminates the instruction you specify, anywhere in the hierarchy of running instructions.
 
+## Flip Rotator
+
+This instruction flips a connected Rotator by 180 degrees.
+
 ## Log
 
 This instruction allows you to add arbitrary text to the NINA log. This might be useful when reporting bugs in being able to mark the time and cicrumstance under which something or other happened.

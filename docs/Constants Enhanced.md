@@ -27,6 +27,11 @@ This instruction can use Expressions both for the set temperature and duration.
 
 Allows use of a Constant or Variable to specify a filter.   Note that filter names are represented by variables named Filter_filterName, where *filterName* is the name of a filter without spaces or other punctuation.
 
-## Flip Rotator
+## External Script +
 
-This instruction flips a connected Rotator by 180 degrees.
+This is fully documented elsewhere in this document.
+
+## Wait for Time Span +
+
+Allows use of Constant or Variable to specify a wait time (in seconds)
+
