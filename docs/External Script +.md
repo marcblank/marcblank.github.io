@@ -26,7 +26,7 @@ In the form of discrete values:
 
 (Required) This is the fully qualified name of the batch file being called. If it contains a space it must be enclosed in quotes so its good practice to do that always. The script can be located anywhere on your system but a new subdirectory in Documents->N.I.N.A. is suggested
 
-#### "HFR: {hfr}  Focus: {focuspos}  Temp: {temp}" or {hfr} {focuspos} {temp}"
+#### "HFR: {hfr}  Focus: {focuspos}  Temp: {temp}" or {hfr} {focuspos} {temp}
 
 (Optional) The value substituted string or the discrete values are passed as batch command line input arguments to the script. The Variable names enclosed in curly braces **{variable}** are substituted with current Variable values.
 
@@ -69,5 +69,5 @@ Testing on the value of **EXITCODE**
 
 ![](ES4.png)
 
-Assigning the value of **EXITCODE** to a Variable and using that value for example as a wait time in the new **Wait for Time Span +** instruction
+Assigning the value of **EXITCODE** to a Variable and using that value for example as a wait time in the new **Wait for Time Span +**git instruction
 
