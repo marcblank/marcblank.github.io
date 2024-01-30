@@ -40,8 +40,10 @@ theme:
     - pymdownx.mark
     - attr_list
     - tables
-    
-   
+
+  plugins:
+    - search
+    - awesome-pages
 
 
 
