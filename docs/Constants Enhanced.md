@@ -19,7 +19,7 @@ This instruction can use Expressions both for the set temperature and duration.
 
 ![](Cool.png)
 
-## Move Focuser Relative +
+## Move Focuser Relative + / Move Focuser Absolute +
 
 ![](Focus.png)
 
