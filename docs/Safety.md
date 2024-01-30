@@ -34,7 +34,7 @@ It's important to note that looping conditions are honored during the execution 
 
 ## Reentrancy
 
-**When Becomes Unsafe** has been designed for reentrancy - tnat is, if conditions become unsafe *again* during execution of the trigger (including while in the midst of **Once Safe** or after a **Wait for Safe+**), tne **When Becomes Unsafe** will restart itself. **Wnen Becomes Unsafe** can be used over and over within a Sequence.
+**When Becomes Unsafe** has been designed for reentrancy - tnat is, if conditions become unsafe *again* during execution of the trigger (including while in the midst of **Once Safe** or after a **Wait for Safe+**), tne **When Becomes Unsafe** will restart itself. **When Becomes Unsafe** can be used over and over within a Sequence.
 
 ## The **SAFE** Variable (version 3.9.5 and greater)
 
