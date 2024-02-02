@@ -1,4 +1,4 @@
-# **Constants, Variables, and Expressions**
+# **Constants/Variables/Expressions**
 
 *Variables are a new feature in Powerups 3.9 and above and are in "beta", meaning that some issues are to be expected.  I will fix problems in a timely manner (with any luck); please report issues to me in Discord!*
 

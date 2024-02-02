@@ -1,4 +1,4 @@
-# Special Case Triggers
+# Triggers
 
 Sequencer Powerups defines four new Triggers that can be helpful in some circumstances.
 

@@ -41,7 +41,7 @@ theme:
     - attr_list
     - tables
 
-  plugins:
+  gitplugins:
     - search
     - awesome-pages
 
