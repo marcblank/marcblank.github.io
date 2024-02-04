@@ -48,7 +48,7 @@ The **IfThenElse** instruction (3.9.7) adds the ability to specify instructions 
 
 ### When
 
-The **When** trigger (previously When Switch) triggers *when* the given expression is not false (not 0 or "false') and runs the specified instructions. There is a **Once Only** toggle in this instruction; setting this to ON will cause this trigger to run only once during execution of your sequence.
+The **When** trigger (previously When Switch) triggers *when* the given expression is not false (not 0 or "false') and runs the specified instructions. There is a **Once Only** toggle in this instruction; setting this to ON will cause this trigger to run only once during execution of your sequence. There is now also a **Interrupt** toggle; if set to 'ON' (the default), the **When** trigger will interrupt any instruction in progress.
 
 #### Warnings for the When Trigger
  If you don't somehow arrange for the expression to become false during the execution of the included instructions, the **When** trigger will run every five seconds (after finishing those instructions).  If you want to keep this from happening, set the **Once Only** toggle to ON
