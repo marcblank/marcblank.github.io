@@ -35,3 +35,9 @@ This is fully documented elsewhere in this document.
 
 Allows use of Constant or Variable to specify a wait time (in seconds)
 
+## Annotation +
+
+This instruction allows the use of expressions within the annotation; they must be surrounded by {}'s.
+
+![](Annotation.png)
+

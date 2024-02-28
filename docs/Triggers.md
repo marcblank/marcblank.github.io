@@ -4,7 +4,7 @@ Sequencer Powerups defines four new Triggers that can be helpful in some circums
 
 ## DIY Trigger
 
-NINA Triggers "fire" between the execution of instructions in a Sequence if the triggering condiiton is met (note that the **When** and **When Becomes Unsafe** Triggers in Sequencer Powerups act differently; they will "fire" within seconds of the condition being met).  Triggers internally have two parts: 1) checking the condition, and 2) taking some appropriate action or actions.
+NINA Triggers "fire" between the execution of instructions in a Sequence if the triggering condition is met (note that the **When** and **When Becomes Unsafe** Triggers in Sequencer Powerups act differently; they will "fire" within seconds of the condition being met).  Triggers internally have two parts: 1) checking the condition, and 2) taking some appropriate action or actions.
 
 So, for example, the built-in **Meridial Flip** Trigger, between instructions, 1) checks if it's time for a Meridian Flip, and 2) if it is, takes the requisite actions - stop guiding, wait to pass the meridian, slew back to the target, etc.
 
