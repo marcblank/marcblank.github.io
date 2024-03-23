@@ -56,7 +56,36 @@ Any echo command causes the value to output to windows STDOUT and if being redir
 
 ### Receiving Values from a Script 
 
-N.I.N.A. treats any non-zero return value from a script as an error. In reality, the error value is data which can be assigned to a variable.
+The value received from a script can be in the range of -2147483647 to 2147483647. 
+
+The single value of low int -2147483648 is reserved for system use.
+
+There are two ways for a script to pass a value back into N.I.N.A
+
+1)	The first and standard way is via the system variable %ERRORLEVEL% which can be set either programmatically or with a specific value coded into the script. The script line:
+EXIT /b <value> 
+passes the <value> back into ‘External Script +’ as the reserved variable EXITCODE. 
+The drawback to this method is that script variables cannot be used in place of value and any value must be hardcoded. This is a windows limitation that does not allows the user to manipulate the variable %ERRORLEVEL%
+
+2)	The second method is to set a user environment variable named NINAESRC (NINA External Script Return Code) using the SETX command. Note the SETX syntax differs from SET in the way it assigns values. SETX does not use the equal (=) sign whereas SET does:
+
+set myvar=12345  
+setx NINAESRC %myvar%
+
+Sequencer Powerups will look to see if the user has set a value into NINAESRC and use that as that as the value assigned to EXITCODE.
+
+Note it is also possible to use the standard method with a variable if the range of vales to return is known and limited in number, using the form:
+
+set myretcode=4   
+if %myretcode% equ 1 exit /b 1  
+if %myretcode% equ 2 exit /b 2  
+if %myretcode% equ 3 exit /b 3  
+if %myretcode% equ 4 exit /b 4  
+if %myretcode% equ 5 exit /b 5 
+
+
+N.I.N.A. treats any non-zero return value from a script as an error. In reality the error value is data which can be assigned to a variable.
+
 
 The same capability to control execution on a non-zero return code exits as with ‘External Script’
 
