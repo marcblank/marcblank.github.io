@@ -6,7 +6,7 @@ The Sequencer Powerups plugin for NINA contains a variety of useful instructions
 
 Comments, suggestions, etc. always welcome at the #sequencer-powerups channel on the NINA Discord server.  This document was last updated for Sequencer Powerups 3.13.1.0.
 
-Version history here: (https://bitbucket.org/zorkmid/nina.plugin.when/src/master/README.md)
+Version history [here](https://bitbucket.org/zorkmid/nina.plugin.when/src/master/README.md)
 
 If you like, you can [Buy me a coffee!](https://www.buymeacoffee.com/marcblank)
 
