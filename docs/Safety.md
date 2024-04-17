@@ -45,7 +45,8 @@ Typically, the concept of *safety* in NINA depends upon having a connected Safet
 | ----------- | -------------------- | -------------- |
 | Safe      | Undefined or true | Safe  |
 | Safe      | Defined and false | Unsafe  |
-| Unsafe     | Any value | Unsafe  |
+| Unsafe     | Undefined or false | Unsafe  |
+| Unsafe    | Defined and true | Safe |
 | Not connected     | Undefined or true | Safe |
 | Not connected     | Defined and false | Unsafe  |
 
