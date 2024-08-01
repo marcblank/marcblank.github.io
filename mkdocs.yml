@@ -45,9 +45,4 @@ theme:
     - search
     - awesome-pages
 
-plugins:
-  - search
-  - print-site
-
-
  
