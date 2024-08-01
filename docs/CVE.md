@@ -1,65 +1,61 @@
 # **Constants/Variables/Expressions**
 
-*Variables are a new feature in Powerups 3.9 and above and are in "beta", meaning that some issues are to be expected.  I will fix problems in a timely manner (with any luck); please report issues to me in Discord!*
-
 ## **Expressions**
 
-An Expression in Sequencer Powerups is pretty much any kind of mathematical expression using numbers (fixed or floating point), Constants, and Variables, plus Switch values, Gauge values, and Weather values (plus Camera sensor temperature and Dome shutter status).  *Note that Switch, Gauge, Weather, Camera, and Dome values are only available if the appropriate gear is connected!*
+An **Expression** in Sequencer Powerups is pretty much any kind of mathematical expression using numbers (fixed or floating point), **constants**, and **Variables**, plus **Device Data** (various data from your devices); currently supported **Device Data** values are documented below.  *Note that **Device Data** values are only available if the appropriate gear is connected!*
 
-Expressions can be used in various "enhanced" instructions (enhanced in the sense that they accept Expressions in place of numbers), as well as some new instructions like **If** and **Loop While**. Enhanced instructions are named with "+" appended to the instruction name (e.g. **Take Exposure +**, **Cool Camera +**, etc).
-So, for example, in **Take Exposure +**, the value of Exposure Time might be `10` or `ExpTime` (assuming `ExpTime` is defined as a Constant or Variable; see below) or even `ExpTime / 3` or a conditional like `if (rgb, ExpTime, ExpTime*2/3)`.  In the latter case, the "if" predicate takes three arguments: something can be tested for true/false (1/0), a value if "true", and a value if "false". Sometime, I'll add a list of valid operators.
+**Expressions** can be used in "enhanced" instructions (enhanced in the sense that they accept **Expressions** in place of numbers), as well as some new instructions like **If** and **Loop While**. Enhanced instructions are named with "+" appended to the instruction name (e.g. **Take Exposure +**, **Cool Camera +**, etc).
+So, for example, in **Take Exposure +**, the value of Exposure Time might be `10` or `ExpTime` (assuming `ExpTime` is defined as a **Constant** or **Variable**; see below) or even `ExpTime / 3` or a conditional like `if (rgb, ExpTime, ExpTime*2/3)`.  In the latter case, the "if" predicate takes three arguments: something can be tested for true/false (1/0), a value if "true", and a value if "false".
 
 ### What's Valid in an Expression
 
-Valid tokens in Expressions include numbers, parentheses, function and operator names (see [Appendix](#appendix-functions-and-operators-in-expressions)), Constant and Variable names, the names of gauges, switches, and weather data (if these devices are connected in NINA), a dome's ShutterState (with Dome connected), a camera's SensorTemp (with Camera connected), and the reserved names **TIME** and **SAFE** (see [ReservedVariables](#reserved-variables)).
+Valid tokens in **Expressions** include numbers, parentheses, function and operator names (see [Appendix](#appendix-functions-and-operators-in-expressions)), **Constant** and **Variable** names, the names of gauges, switches, and other **Device Data** (if these devices are connected in NINA), and the reserved names **TIME** and **SAFE** (see [ReservedVariables](#reserved-variables)).
 
 ## **Constants**
 
-A Constant in Powerups is created using the **Constant** instruction; enter a name for the Constant and a value, which can be any valid expression (if the value refers to a Constant, it needs to have been defined in the same instruction set or in a parent of the instruction set).  **Constant** is *self-executing* and continuously re-evaluated!  This means that Constants are "live" as they are read into the sequencer, and their values update as required, based on changes to other Constants referred to.  When the Sequencer executes a **Constant** instruction, literally nothing happens!
+A **Constant** in Powerups is created using the **Constant** instruction; enter a name for the **Constant** and a value, which can be any valid expression (if the value refers to a **Constant**, it needs to have been defined in the same instruction set or in a parent of the instruction set).  The **Constant** instruction is *self-executing* and continuously re-evaluated!  This means that **Constants** are "live" as they are read into the sequencer, and their values update as required, based on changes to other **Constants** that might have been referred to.  When the Sequencer executes a **Constant** instruction, literally nothing happens!
 
-The value of a Constant can be changed at any time (even when a Sequence is running) and all references to that Constant are updated semi-immediately (within a couple seconds).  It's not a very good constant, is it? :)
+The value of a **Constant** can be changed at any time (even when a Sequence is running) and all references to that **Constant** are updated semi-immediately (within a couple seconds).  It's not a very good constant, is it? :)
 
 ![](Constants Screen.png)
 
-Note that the calculated value of a Constant is shown in braces next to the Expression defining it. The value is shown in green if valid, and orange if not. Note that Constant names are *case sensitive*, as in the definition of the Constant 'E'
+Note that the calculated value of a **Constant** is shown in braces next to the **Expression** defining it. The value is shown in green if valid, and orange if not. Note that **Constant** names are *case sensitive*, as in the definition of 'E' abover.
 
-Constants have block scope, which means that a Constant has value in the instruction set that includes it, as well as instruction sets "below" it in the hierarchy of instructions (i.e. nested within the block in which it appears).  If a Constant X is defined in one instruction set, and a Constant X is also defined in a "lower" instruction set, the closest definition of X is used when that Constant is referenced.  Many computer languages use block scope for variables.
+**Constants** have block scope, which means that a **Constant** has a value in the instruction set that includes it, as well as instruction sets "below" it in the hierarchy of instructions (i.e. nested within the block in which it appears).  If a **Constant** X is defined in one instruction set, and a **Constant** X is also defined in a "lower" instruction set, the closest definition of X is used when that **Constant** is referenced.  Many computer languages use block scope for variables.
 
 ![](BlockScope.png)
 
 ## **Variables**
 
-A Variable in Powerups is more similar to a traditional computer language variable; it also uses "block scope" (see above).   A Variable is defined using the **Variable** instruction, which is entirely analogous to the **Constant** instruction, except that Variable definitions are not self-executing - the Variable does not exist prior to the execution of the Define Variable instruction.   References to the Variable "below" it in the code will show `Undefined: <varname>` until the instruction gets executed.
-The **Set Variable** instruction can be used to change the value of a previously defined Variable.  For a value, any expression can be used - including the use of Constants and Variables that have been previously defined.  The simplest form of this might this:
+A **Variable** in Powerups is more similar to a traditional computer language variable; it also uses "block scope" (see above).   A **Variable** is defined using the **Variable** instruction, which is entirely analogous to the **Constant** instruction, except that **Variable** definitions are *not* self-executing - the **Variable** does not have a value prior to the execution of the **Variable** instruction.   References to a **Variable** "below" it in the code will show `Not evaluated: <varname>` until the **Variable** instruction gets executed.
+The **Set Variable** instruction can be used to change the value of a previously defined **Variable**.  For a value, any expression can be used - including the use of **Constants** and **Variables** that have been previously defined.  The simplest form of this might this:
 
 ![](Variables.png)
 
-Just as in a procedural computer language, if you are looping through an instruction set, any variables defined in that set are reset to having no value before the loop repeats!
+Just as in a procedural computer language, if you are looping through an instruction set, any **Variables** defined in that instruction set are reset to having no value before the loop repeats!
 
-## **If (instruction), When (trigger), and Loop While (condition)**
+## **If and IfThenElse (instructions), When (trigger), and Loop While (condition)**
 
 ### If and IfThenElse
 
-The **If** instruction (previously If Constant) evaluates the given Expression and runs the specified instructions if that expression is not false (not 0 or "false"). This instruction was previously named **If Constant**.
-
-The **IfThenElse** instruction (3.9.7) adds the ability to specify instructions to execute if the Expression is false.
+The **If** instruction evaluates the given **Expression** and runs the specified instructions if that **Expression** is not false (not 0 or "false").  The **IfThenElse** instruction adds the ability to specify instructions to execute if the **Expression** is false (or 0).
 
 ![](If.png)
 
 ### When
 
-The **When** trigger (previously When Switch) triggers *when* the given expression is not false (not 0 or "false') and runs the specified instructions. There is a **Once Only** toggle in this instruction; setting this to ON will cause this trigger to run only once during execution of your sequence. There is now also a **Interrupt** toggle; if set to 'ON' (the default), the **When** trigger will interrupt any instruction in progress.
+The **When** trigger is activated *when* the given expression is not false (not 0 or "false') and runs the specified instructions. There is a **Once Only** toggle in this instruction; setting this to ON will cause this trigger to run only once during execution of your sequence. There is also a **Interrupt** toggle; if set to 'ON' (the default), the **When** trigger will interrupt any instruction in progress (the check is performed approximately every 5 seconds).
+
+*The **Interrupt** functionality of the **When** trigger is unlike traditional NINA triggers that only run between the execution of instructions!*
 
 #### Warnings for the When Trigger
- If you don't somehow arrange for the expression to become false during the execution of the included instructions, the **When** trigger will run every five seconds (after finishing those instructions).  If you want to keep this from happening, set the **Once Only** toggle to ON
-
- Unlike other Triggers, the **When** trigger trips within seconds of the expression becoming true, even interrupting instructions in process.  This is very much unlike regular NINA triggers which trip *between* instructions.
+ If you don't somehow arrange for the **Expression** to become false during the execution of the included instructions, the **When** trigger will run every five seconds (after finishing those instructions).  If you want to keep this from happening, set the **Once Only** toggle to ON!
 
 ![](When.png)
 
 ### Loop While
 
-**Loop While** is new; it's a standard NINA "Conditional" and gets placed with other conditionals in an instruction set.   When queried (every 5 seconds or so while a sequence is running), it evaluates the given expression and terminates the loop if the result is "false" or 0.
+**Loop While** is a standard NINA "Conditional" and gets placed with other conditionals in an instruction set.   When queried (every 5 seconds or so while a sequence is running), it evaluates the given **Expression** and terminates the loop if the result is "false" or 0.
 
 Here’s an example of a very simple instruction set using **Variable**, **Set Variable**, and **Loop While**.  Note that the **Variable** instruction needs to be outside the loop; otherwise the `Lp` variable will be reset to 10 every time the loop is restarted!
 
@@ -69,7 +65,7 @@ Note the red "i" (for "Information") icon in the **Loop While** instruction.  Ho
 
 ![](InfoDropdown.png)
 
-Here's an interesting example that uses these instructions to implement a timeout. The **Loop While** is basically running for up to 60 seconds OR until the **confirmed** variable becomes true.  Each time through the loop, the **If** instruction checks whether a switch (in this case, **GuideScopeOpen**) has become "true"; if so, the **Set Variable** instruction sets **confirmed** to true.  This ends the loop.
+Here's an interesting example that uses these instructions to implement a timeout. The **Loop While** is basically running for up to 60 seconds OR until the **confirmed** **Variable** becomes true.  Each time through the loop, the **If** instruction checks whether a switch (in this case, **GuideScopeOpen**) has become "true"; if so, the **Set Variable** instruction sets **confirmed** to true.  This ends the loop.
 
 ![](TimeLoop.png)
 
@@ -77,13 +73,13 @@ Presumably, when this loop finishes, another test of **GuideScopeOpen** will be 
 
 ## Constant/Variable Container
 
-A **Constant/Variable COntainer** is a special kind of container that can hold only **Constant**, **Variable**, and **Annotation** instructions.  Its intended use is to "clean up" sequences with many Constant and Variable definitions.  What makes this container special is that Constants and Variables defined within it *act as though they were defined at the level of the container (or Template by Reference) that they are enclosed in*.
+A **Constant/Variable Container** is a special kind of container that can hold only **Constant**, **Variable**, and **Annotation** instructions.  Its intended use is to "clean up" sequences with many **Constant** and **Variable** definitions.  What makes this container special is that **Constants** and **Variables** defined within it *act as though they were defined at the level of the container (or **Template by Reference**) that they are enclosed in*.
 
-In the example below, the Constant X2 definition, using the Constant X, would be undefined if X had not been defined in the Constant/Variable container used in the Template by Reference.
+In the example below, the **Constant** X2 definition, using the **Constant** X, would be undefined if X had not been defined in the **Constant/Variable** container used in the **Template by Reference**.
 
 ![](CVC.png)
 
-In a regular sequential instruction set, the variable X is not in scope when evaluating X2.
+In a regular sequential instruction set, the **Variable** X is not in scope when evaluating X2.
 
 ![](CVC2.png)
 
@@ -96,15 +92,41 @@ The following Variable/Constant names are reserved:
 
 **TIME** &ensp; - &ensp; The current time in seconds since NINA was started, with an accuracy of 10 seconds or so. This is not intended, obviously, for highly accurate timing, but can be used, for example, with the **When** trigger to take actions at various intervals.
 
-Dome shutter status names:  **DomeStatus, ShutterNone, ShutterOpen, ShutterClosed, ShutterOpening, ShutterClosing, ShutterError**
+**EXITCODE** &ensp; - &ensp; The EXITCODE from a call to the **External Script +** command (see later in this document)
 
-Camera names: **SensorTemp**
+## Device Data
 
-Flat Device names: **CoverState, CoverOpen, CoverClosed, CoverNeitherOpenNorClosed, CoverUnknown, CoverError**
+The following **Device Data** is available if the associated device is connected in NINA.  Note that this list is added to frequently, often upon request by users.
 
-Filter Wheel names: **CurrentFilter, Filter_name**, where "name" is the name of the filter with all non-alphanumeric characters removed.  So a filter named "My IR Filter" must be referred to as Filter_MyIRFilter.
+**Astrometry** data: **SunAltitude**, **MoonAltitude** (no device needed)
 
-Safety Monitor: **IsSafe**
+**Camera** data: **SensorTemp**
+
+Camera data (hidden): **camera__PixelSize, camera__XSize, camera__YSize, camera__CoolerPower, camera__CoolerOn**
+
+**Dome** data:  **DomeStatus, DomeAzimuth**
+
+DomeStatus constants: **ShutterNone, ShutterOpen, ShutterClosed, ShutterOpening, ShutterClosing, ShutterError**
+
+**Filter Wheel** data: **CurrentFilter**
+
+CurrentFilter constants: **Filter_name**, where "name" is the name of the filter with all non-alphanumeric characters removed.  So a filter named "My IR Filter" must be referred to as Filter_MyIRFilter.
+
+**Flat Device** data: **CoverState**
+
+CoverStatus constants: **CoverOpen, CoverClosed, CoverNeitherOpenNorClosed, CoverUnknown, CoverError**
+
+**Last Image** data: **Image_HFR**, **Image_StarCount** (if Hocus Focus is being used for star analysis, **Image_FWHM** and **Image_Eccentricity** are also available)
+
+**Roof** data: **RoofStatus**
+
+RoofStatus constants: **RoofOpen**, **RoofNotOpen**, **RoofCannotOpenOrRead** (note: **RoofStatus** requires the use of a RoofStatus file that can be defined in the Powerups settings)
+
+**Rotator** data: **RotatorMechanicalPosition**, **RotatorPosition** (these are the same)
+
+**Safety Monitor** data: **IsSafe**
+
+**Telescope (Mount)** data: **Altitude**, **Azimuth**, **RightAscension**, **Declination**, **AtPark**
 
 ## **Odds and Ends**
 
