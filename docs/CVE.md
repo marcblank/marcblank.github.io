@@ -70,7 +70,7 @@ The **If Failed** instruction, for example, executes its **Embedded Instructions
 
 ![](CapturedDrag.png)
 
-And here's how it looks with the **Run Autofocus** captured, and with a **Send to Pushover** instruction added as an **Embedded Instruction**.   If the **Run Autofocus** fails, the message will be sent by Pushover.
+And here's how it looks with the **Run Autofocus** captured, and with a **Send to Pushover** instruction added as an **Embedded Instruction**.   If the **Run Autofocus** fails, the message will be sent by Pushover...
 
 ![](CapturedAF.png)
 
