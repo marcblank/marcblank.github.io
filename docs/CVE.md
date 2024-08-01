@@ -149,7 +149,7 @@ RoofStatus constants: **RoofOpen**, **RoofNotOpen**, **RoofCannotOpenOrRead** (n
 
 ![](GreenOrange.png)
  
-•	Up to 10 **Global onstants** can be defined on the plugin page; each of them can be set for *all* of your NINA Profiles, or can be set on a per-profile basis.
+•	Up to 10 **Global Constants** can be defined on the plugin page; each of them can be set for *all* of your NINA Profiles, or can be set on a per-profile basis.
 
 ![](Globals.png)
 
