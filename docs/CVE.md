@@ -46,6 +46,34 @@ Just as in a procedural computer language, if you are looping through an instruc
 
 **Global Variable** : Creates and defines a **Variable** that can be used anywhere in a sequence, *once the instruction has been executed*.  **Global Variables** are the *only* variables that can be used across sequencer sections (where a section is one of "Start Area", "Target Area", and "End Area").  The value of a **Global Variable** can be changed with either of the two instructions above (**Set Variable** and **Set Variable to Date**).
 
+## Embedded Instructions
+
+Many Powerups include what I call **Embedded Instructions**; these are NINA instructions that are *embedded* within the Powerups instruction, in much the same way that instructions are embedded in NINA's instruction sets.  A typical example is the **If** instruction (documented just below).  When an **If** is dragged into a sequence, it looks like this:
+
+![](EmbeddedEmpty.png)
+
+To add **Embedded Instructions**, you simply drag them into the space marked "Conditional instructions go here", as below.  In the following example, the two embedded instructions will be executed when WindGust is greater than 5.
+
+![](EmbeddedOpen.png)
+
+To save screen real estate, **Embedded Instructions** can be hidden with the arrow at the upper left of the instruction.
+
+![](EmbeddedArrow.png)
+
+## Captured Instructions
+
+Another concept Powerups uses is the idea of a **Captured Instruction**.  Instructions that use this concept work on another NINA instruction, executing it and (usually) acting on the result.  Here's one...
+
+![](CapturedEmpty.png)
+
+The **If Failed** instruction, for example, executes its **Embedded Instructions** if the execution of the **Captured Instruction** fails.   Here I am dragging a **Run Autofocus** instruction into the **If Failed**.
+
+![](CapturedDrag.png)
+
+And here's how it looks with the **Run Autofocus** captured, and with a **Send to Pushover** instruction added as an **Embedded Instruction**.   If the **Run Autofocus** fails, the message will be sent by Pushover.
+
+![](CapturedAF.png)
+
 ## **If and IfThenElse (instructions), When (trigger), and Loop While (condition)**
 
 ### If and IfThenElse
