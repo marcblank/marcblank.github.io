@@ -145,19 +145,19 @@ RoofStatus constants: **RoofOpen**, **RoofNotOpen**, **RoofCannotOpenOrRead** (n
 
 ## **Odds and Ends**
 
-•	Wherever Constants of Variables are used, the current values are shown in brackets { }, in green if valid and in orange if invalid (not defined, etc.)  These colors are currently fixed, and only appear nicely in certain color schemes; sorry about that!  Here's a rather useless example:
+•	Wherever **Expressions** are used, the current value of that **Expression** is shown in brackets { }, in green if valid and in orange if invalid (not defined, etc.)  These colors are currently fixed, and only appear nicely in certain color schemes; sorry about that!  Here's a rather useless example:
 
 ![](GreenOrange.png)
  
-•	Up to 10 "global" constants can be defined on the plugin page; each of them can be set for *all* of your NINA Profiles, or can be set on a per-profile basis.
+•	Up to 10 **Global onstants** can be defined on the plugin page; each of them can be set for *all* of your NINA Profiles, or can be set on a per-profile basis.
 
 ![](Globals.png)
 
-•	Hovering over an Expression will show the current value of any Constants and Variables that are used in that Expression.  In the example below, the Constant A is defined "Here" (meaning in the current block) and has a value of 8; the Constant CHATTER is defined globally and has a value of 200.
+•	Hovering over an **Expression** will show the current value of any **Constants** and **Variables** that are used in that **Expression**.  In the example below, the **Constant** A is defined "Here" (meaning in the current block) and has a value of 8; the **Constant** CHATTER is defined globally and has a value of 200.
 
 ![](Dissect.png)
  
-•	**If** and **Loop While** instructions show the current result of the Expression.
+•	**If** and **Loop While** instructions show the current result of the **Expression**.
 
 •	There is a **Breakpoint** instruction that stops sequence execution until you press the "Continue" button that appears when a breakpoint is hit.  The **Breakpoint** instruction is exactly equivalent to **Wait for Time Span** of twelve hours.
 
