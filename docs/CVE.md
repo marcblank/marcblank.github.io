@@ -23,24 +23,28 @@ Note that the calculated value of an **Expression** is shown in braces next to t
 
 **Constants** have block scope, which means that a **Constant** has a value in the instruction set that includes it, as well as instruction sets "below" it in the hierarchy of instructions (i.e. nested within the block in which it appears).  If a **Constant** X is defined in one instruction set, and a **Constant** X is also defined in a "lower" instruction set, the closest definition of X is used when that **Constant** is referenced.  Many computer languages use block scope for variables.
 
+**Global Constants** are **Constants** that are valid everywhere in a sequence; they are set up in the Sequencer Powerups plugin page.  **Global Constants** can, individually, be set up to be valid for all NINA Profiles or on a per-Profile basis.
+
 ![](BlockScope.png)
 
 ## **Variables**
 
-A **Variable** in Powerups is more similar to a traditional computer language variable; it also uses "block scope" (see above).   A **Variable** is defined using the **Variable** instruction, which is entirely analogous to the **Constant** instruction, except that **Variable** definitions are *not* self-executing - the **Variable** does not have a value prior to the execution of the **Variable** instruction.   References to a **Variable** "below" it in the code will show `Not evaluated: <varname>` until the **Variable** instruction gets executed.
+A **Variable** in Powerups is more similar to a traditional computer language variable; it also uses "block scope" (except for **Global Variables**; see below).   A **Variable** is defined using the **Variable** instruction, which is entirely analogous to the **Constant** instruction, except that **Variable** definitions are *not* self-executing - the **Variable** does not have a value prior to the execution of the **Variable** instruction.   References to a **Variable** "below" it in the code will show `Not evaluated: <varname>` until the **Variable** instruction gets executed.
 The **Set Variable** instruction can be used to change the value of a previously defined **Variable**.  For a value, any **Expression** can be used - including the use of **Constants** and **Variables** that have been previously defined.  The simplest form of this might this:
 
 ![](Variables.png)
 
 Just as in a procedural computer language, if you are looping through an instruction set, any **Variables** defined in that instruction set are reset to having no value before the loop repeats!
 
-## Variable Instructions
+### Variable Instructions
 
 **Variable** : Creates and defines the initial value of a **Variable** *when it is executed*.
 
 **Set Variable** : Redefines the value of a previously created **Variable**
 
 **Set Variable to Date** : Redefines the value of a previously created **Variable** to a date and time, using the same mechanism as the built-in **Loop Until Time** interface (i.e. clock time, and time offset from meridian and the various forms of sunrise and sunset).  *Note: Internally, dates are represented by an integer, the number of seconds from midnight January 1, 1970 UTC*
+
+**Global Variable** : Creates and defines a **Variable** that can be used anywhere in a sequence, *once the instruction has been executed*.  **Global Variables** are the *only* variables that can be used across sequencer sections (where a section is one of "Start Area", "Target Area", and "End Area").  The value of a **Global Variable** can be changed with either of the two instructions above (**Set Variable** and **Set Variable to Date**).
 
 ## **If and IfThenElse (instructions), When (trigger), and Loop While (condition)**
 
@@ -91,6 +95,9 @@ In a regular sequential instruction set, the **Variable** X is not in scope when
 
 ![](CVC2.png)
 
+## Imaging Page Dockable
+
+There is a dockable panel in the Imaging page of NINA that can be used to "watch" any number of **Expressions** in real-time.  More to follow.
 
 ## Reserved Variables
 
