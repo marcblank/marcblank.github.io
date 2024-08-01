@@ -2,24 +2,24 @@
 
 ## **Expressions**
 
-An **Expression** in Sequencer Powerups is pretty much any kind of mathematical expression using numbers (fixed or floating point), **constants**, and **Variables**, plus **Device Data** (various data from your devices); currently supported **Device Data** values are documented below.  *Note that **Device Data** values are only available if the appropriate gear is connected!*
+An **Expression** in Sequencer Powerups is pretty much any kind of mathematical expression using numbers (fixed or floating point), **Constants**, and **Variables**, plus **Device Data** (various data from your devices); currently supported **Device Data** values are documented below.  *Note that **Device Data** values are only available if the appropriate gear is connected!*
 
 **Expressions** can be used in "enhanced" instructions (enhanced in the sense that they accept **Expressions** in place of numbers), as well as some new instructions like **If** and **Loop While**. Enhanced instructions are named with "+" appended to the instruction name (e.g. **Take Exposure +**, **Cool Camera +**, etc).
 So, for example, in **Take Exposure +**, the value of Exposure Time might be `10` or `ExpTime` (assuming `ExpTime` is defined as a **Constant** or **Variable**; see below) or even `ExpTime / 3` or a conditional like `if (rgb, ExpTime, ExpTime*2/3)`.  In the latter case, the "if" predicate takes three arguments: something can be tested for true/false (1/0), a value if "true", and a value if "false".
 
 ### What's Valid in an Expression
 
-Valid tokens in **Expressions** include numbers, parentheses, function and operator names (see [Appendix](#appendix-functions-and-operators-in-expressions)), **Constant** and **Variable** names, the names of gauges, switches, and other **Device Data** (if these devices are connected in NINA), and the reserved names **TIME** and **SAFE** (see [ReservedVariables](#reserved-variables)).
+Valid tokens in **Expressions** include numbers, parentheses, function and operator names (see [Appendix](#appendix-functions-and-operators-in-expressions)), **Constant** and **Variable** names, the names of gauges, switches, and other **Device Data** (if these devices are connected in NINA), and the reserved names **TIME**,  **SAFE**, and **EXITCODE** (see [ReservedVariables](#reserved-variables)).
 
 ## **Constants**
 
-A **Constant** in Powerups is created using the **Constant** instruction; enter a name for the **Constant** and a value, which can be any valid expression (if the value refers to a **Constant**, it needs to have been defined in the same instruction set or in a parent of the instruction set).  The **Constant** instruction is *self-executing* and continuously re-evaluated!  This means that **Constants** are "live" as they are read into the sequencer, and their values update as required, based on changes to other **Constants** that might have been referred to.  When the Sequencer executes a **Constant** instruction, literally nothing happens!
+A **Constant** in Powerups is created using the **Constant** instruction; enter a name for the **Constant** and a value, which can be any valid expression (if the value refers to another **Constant**, that **Constant** needs to have been defined in the same instruction set or in a parent of the instruction set).  The **Constant** instruction is *self-executing* and continuously re-evaluated!  This means that **Constants** are "live" as they are read into the sequencer, and their values update as required, based on changes to other **Constants** that might have been referred to.  When the Sequencer executes a **Constant** instruction, literally nothing happens!  *Note: A Constant definition cannot reference Variables*
 
-The value of a **Constant** can be changed at any time (even when a Sequence is running) and all references to that **Constant** are updated semi-immediately (within a couple seconds).  It's not a very good constant, is it? :)
+The value of a **Constant** can be changed at any time (even when a Sequence is running) and all references to that **Constant** are updated semi-immediately (within a couple seconds).  It's not a very good constant, is it?
 
 ![](Constants Screen.png)
 
-Note that the calculated value of a **Constant** is shown in braces next to the **Expression** defining it. The value is shown in green if valid, and orange if not. Note that **Constant** names are *case sensitive*, as in the definition of 'E' abover.
+Note that the calculated value of an **Expression** is shown in braces next to the **Expression** defining it. The value is shown in green if valid, and orange if not. Note that **Constant** (and **Variable**) names are *case sensitive*, as in the definition of 'E' in the screenshot above.
 
 **Constants** have block scope, which means that a **Constant** has a value in the instruction set that includes it, as well as instruction sets "below" it in the hierarchy of instructions (i.e. nested within the block in which it appears).  If a **Constant** X is defined in one instruction set, and a **Constant** X is also defined in a "lower" instruction set, the closest definition of X is used when that **Constant** is referenced.  Many computer languages use block scope for variables.
 
@@ -28,11 +28,19 @@ Note that the calculated value of a **Constant** is shown in braces next to the 
 ## **Variables**
 
 A **Variable** in Powerups is more similar to a traditional computer language variable; it also uses "block scope" (see above).   A **Variable** is defined using the **Variable** instruction, which is entirely analogous to the **Constant** instruction, except that **Variable** definitions are *not* self-executing - the **Variable** does not have a value prior to the execution of the **Variable** instruction.   References to a **Variable** "below" it in the code will show `Not evaluated: <varname>` until the **Variable** instruction gets executed.
-The **Set Variable** instruction can be used to change the value of a previously defined **Variable**.  For a value, any expression can be used - including the use of **Constants** and **Variables** that have been previously defined.  The simplest form of this might this:
+The **Set Variable** instruction can be used to change the value of a previously defined **Variable**.  For a value, any **Expression** can be used - including the use of **Constants** and **Variables** that have been previously defined.  The simplest form of this might this:
 
 ![](Variables.png)
 
 Just as in a procedural computer language, if you are looping through an instruction set, any **Variables** defined in that instruction set are reset to having no value before the loop repeats!
+
+## Variable Instructions
+
+**Variable** : Creates and defines the initial value of a **Variable** *when it is executed*.
+
+**Set Variable** : Redefines the value of a previously created **Variable**
+
+**Set Variable to Date** : Redefines the value of a previously created **Variable** to a date and time, using the same mechanism as the built-in **Loop Until Time** interface (i.e. clock time, and time offset from meridian and the various forms of sunrise and sunset).  *Note: Internally, dates are represented by an integer, the number of seconds from midnight January 1, 1970 UTC*
 
 ## **If and IfThenElse (instructions), When (trigger), and Loop While (condition)**
 
@@ -151,7 +159,7 @@ RoofStatus constants: **RoofOpen**, **RoofNotOpen**, **RoofCannotOpenOrRead** (n
  
 ## **Summary**
 
- Constants have the same value throughout a sequence (in their scope) and do not change during sequence execution (or more precisely are not changed *because* of sequence execution).  A human can change them, and that change takes effect immediately, but the sequence itself does not change them.  Variables, on the other hand, are created and changed by sequence execution, without human intervention.  However, you can always manually change the values of both Variables and Constants during execution, just as you can reorder instructions and do other dastardly things to yout sequence (with great power comes great responsibility).  *Just remember that manual changes can have side effects that might be unexpected!*
+ **Constants** have the same value throughout a sequence (in their scope) and do not change during sequence execution (or more precisely are not changed *because* of sequence execution).  A human can change them, and that change takes effect immediately, but the sequence itself does not change them.  **Variables**, on the other hand, are created and changed by sequence execution, without human intervention.  However, you can always manually change the values of both **Variables** and **Constants** during execution, just as you can reorder instructions and do other dastardly things to yout sequence (with great power comes great responsibility).  *Just remember that manual changes can have side effects that might be unexpected!*
 
 
 ## **Appendix: Functions and Operators in Expressions**
@@ -181,6 +189,16 @@ These are the valid functions that can be used in Expressions.
 | `Truncate`    | Calculates an integral part of a number |
 | `if`    | Returns whether an element is in a set of values - if(expr, then, else) |
 | `in`    | Returns a value based on a condition |
+
+| Date/Time      | Description                          |
+| ----------- | ------------------------------------ |
+| `now`       | Returns the current date/time  |
+| `hour`      | Returns the hour (Midnight = 0, 11PM = 23) |
+| `minute`    | Returns the minute of the hour |
+| `day`    | Returns the day of the month |
+| `month`    | Returns the month (January = 1) |
+| `year`    | Returns the year |
+| `dow`    | Returns the day of the week (Sunday = 0) |
 
 Here are the valid operators in Expressions
 
