@@ -8,6 +8,6 @@ Comments, suggestions, etc. always welcome at the #sequencer-powerups channel on
 
 Version history [here](https://bitbucket.org/zorkmid/nina.plugin.when/src/master/README.md)
 
-If you like, you can [Buy me a coffee!](https://www.buymeacoffee.com/marcblank)
+If you're happy with Sequencer Powerups, you can always [Buy me a coffee!](https://www.buymeacoffee.com/marcblank)
 
 Marc
