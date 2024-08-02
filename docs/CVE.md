@@ -101,7 +101,7 @@ Here’s an example of a very simple instruction set using **Variable**, **Set V
 
 ![](LoopWhile.png)
 
-Note the red "i" (for "Information") icon in the **Loop While** instruction.  Hovering over this icon will show all of the possible gauge, switch, weather, and camera data that can be used in the Exporession (this appears in both **If** and **Loop While** instructions). Here's what this might look like for you, depending on what devices you have connected at the time:
+Note the white "i" (for "Information") icon in the **Loop While** instruction.  Hovering over this icon will show all of the **Device Data** that can be used in the **Expression** (this appears everywhere an **Expression** can be used). Here's what this might look like for you, depending on what devices you have connected at the time:
 
 ![](InfoDropdown.png)
 
