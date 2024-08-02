@@ -18,13 +18,11 @@ The **Once Safe** instruction is the preferred way of continuing to image after 
 
 ![](OnceSafe.png)
 
-### Wait for Safe+
+### Wait for Safe +
 
-The **Wait for Safe+** instruction can also be used within the **When Becomes Unsafe** instruction; this, as you'd expect, simply waits for conditions to become safe again and then continues, typically with instructions, as with **Once Safe**, that ready your gear for continued imaging.
+The **Wait for Safe+** instruction can also be used within the **When Becomes Unsafe** instruction; this, as you'd expect, simply waits for conditions to become safe again and then continues, typically with instructions, as with **Once Safe**, that prepare your gear for continued imaging.
 
-![](WaitUntilSafe.png)
-
-Tne two examples above accomplish the same thing; **Once Safe** is more pleasing to the eye, however.
+I strongly recommend using **Once Safe** as opposed to **Wait for Safe +**
 
 ## Looping Considerations
 
@@ -36,7 +34,7 @@ It's important to note that looping conditions are honored during the execution 
 
 **When Becomes Unsafe** has been designed for reentrancy - tnat is, if conditions become unsafe *again* during execution of the trigger (including while in the midst of **Once Safe** or after a **Wait for Safe+**), tne **When Becomes Unsafe** will restart itself. **When Becomes Unsafe** can be used over and over within a Sequence.
 
-## The **SAFE** Variable (version 3.9.5 and greater)
+## The **SAFE** Variable
 
 Typically, the concept of *safety* in NINA depends upon having a connected Safety Monitor device that can report conditions as being "safe" or "unsafe". Indeed, all of the safety-related instructions in Powerups typically use this in determining the current safety status of your gear. However, there are cases in which a NINA user may wish to simulate the preence of a safety monitor using other data, for example a weather reporting device. To allow for these cases, Powerups will, in addition to the state of a Safety Monitor, look to see if a Variable named SAFE (all uppercase) is defined.  If it is, its value is used to determine whether conditions are safe or unsafe, *regardless of the state of a connected Safety Monitor*. The table below shows how Powerups behaves depending on the states of a Safety Monitor and the SAFE Variable.
 
