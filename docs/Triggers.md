@@ -14,6 +14,8 @@ In this simple example, we use the triggering condition of **AF After HFR Increa
 
 ![](DIYTrigger.png)
 
+*Note: When DIY Trigger is activated, only the Embedded Instructions are executed; there are no default or implicit actions taken!  In the example above, a Run Autofocus will *only* be done because it's one of the Embedded Instructions.* 
+
 ## Safe Trigger
 
 This is exactly like **DIY Trigger** but the trigger will only trip if conditions are "Safe".

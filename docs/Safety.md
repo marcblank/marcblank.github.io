@@ -14,9 +14,7 @@ One of these two instructions will almost always be used after the instructions 
 
 ### Once Safe
 
-The **Once Safe** instruction is the preferred way of continuing to image after **When Becomes Unsafe** is triggered.  As with **When Becomes Unsafe**, you add instructions within **Once Safe** that get your gear ready to continue imnaging.  Typically, this would include instructions to open a dome, unpark your mount, slew back to your target, start guiding, perhaps autofocus, etc.   When the last of these instructions is executed, NINA will go right back to what it was doing when WBU was initially executed.   Here's a typical **When Becomes Unsafe** instruction including a **Once Safe** clause.
-
-![](OnceSafe.png)
+The **Once Safe** instruction is the preferred way of continuing to image after **When Becomes Unsafe** is triggered.  As with **When Becomes Unsafe**, you add instructions within **Once Safe** that get your gear ready to continue imnaging.  Typically, this would include instructions to open a dome, unpark your mount, slew back to your target, start guiding, perhaps autofocus, etc.   When the last of these instructions is executed, NINA will go right back to what it was doing when WBU was initially executed.   The screenshot above shows the use of **When Becomes Unsafe** with **Once Safe**.
 
 ### Wait for Safe +
 
@@ -26,7 +24,7 @@ I strongly recommend using **Once Safe** as opposed to **Wait for Safe +**
 
 ## Looping Considerations
 
-It's important to note that looping conditions are honored during the execution of a **When Becomes Unsafe** instruction, thereby allowing your sequences to naturally terminate cleanly even if conditions never become safe again.  For example, in the case below, tne **When Becomes Unsafe** will stop when the enclosing **Loop Until Time** expires at Astronomical Dawn, even if the sequencer is sitting in a **Wait Until Safe+**
+It's important to note that looping conditions are honored during the execution of a **When Becomes Unsafe** instruction, thereby allowing your sequences to naturally terminate cleanly even if conditions never become safe again.  For example, in the case below, tne **When Becomes Unsafe** will stop when the **Loop Until Time** expires at Astronomical Dawn, even if the sequencer is sitting in a **Once Safe** or a **Wait until Safe +** instruction.
 
 ![](WBULoop.png)
 
