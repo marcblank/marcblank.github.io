@@ -125,7 +125,9 @@ In a regular sequential instruction set, the **Variable** X is not in scope when
 
 ## Imaging Page Dockable
 
-There is a dockable panel in the Imaging page of NINA that can be used to "watch" any number of **Expressions** in real-time.  More to follow.
+There is a dockable panel in the Imaging page of NINA that can be used to "watch" any number of **Expressions** in real-time.  These can include any of your **Constants**, **Variables**, **Device Data**, etc.   Basically, an all-in-one data display for Powerups.
+
+![](Panel.png)
 
 ## Reserved Variables
 
