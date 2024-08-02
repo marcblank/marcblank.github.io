@@ -43,7 +43,6 @@ Again, this all makes sense if you remember that **Template by Reference** *copi
 
 At first, some of this might seem confusing, though I've tried to make it comprehensible. If you have questions, please don't hesitate to ask on the #sequencer-powerups channel in the NINA Discord.
 
-#
 # **Functions**
 
 Functions are Templates that can be called with up to six arguments, and can return a value (by setting a **Variable**).  They are similar to **Template by Reference** in that they refer to a Template by name, but they act somewhat differently as will be described below.

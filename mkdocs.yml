@@ -45,4 +45,9 @@ theme:
     - search
     - awesome-pages
 
+  plugins:
+    - search
+    
+
+
  
