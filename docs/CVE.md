@@ -13,7 +13,7 @@ Valid tokens in **Expressions** include numbers, parentheses, function and opera
 
 ## **Constants**
 
-A **Constant** in Powerups is created using the **Constant** instruction; enter a name for the **Constant** and a value, which can be any valid expression (if the value refers to another **Constant**, that **Constant** needs to have been defined in the same instruction set or in a parent of the instruction set).  The **Constant** instruction is *self-executing* and continuously re-evaluated!  This means that **Constants** are "live" as they are read into the sequencer, and their values update as required, based on changes to other **Constants** that might have been referred to.  When the Sequencer executes a **Constant** instruction, literally nothing happens!  *Note: A Constant definition cannot reference Variables*
+A **Constant** in Powerups is created using the **Constant** instruction; enter a name for the **Constant** and a value, which can be any valid expression (if the value refers to another **Constant**, that **Constant** needs to have been defined in the same instruction set or in a parent of the instruction set).  The **Constant** instruction is *self-executing* and continuously re-evaluated!  This means that **Constants** are "live" as they are read into the sequencer, and their values update as required, based on changes to other **Constants** that might have been referred to.  When the Sequencer executes a **Constant** instruction, literally nothing happens!  *Note: A Constant definition cannot reference Variables and Device Data, as these - pretty much by definition - can change at any time!*
 
 The value of a **Constant** can be changed at any time (even when a Sequence is running) and all references to that **Constant** are updated semi-immediately (within a couple seconds).  It's not a very good constant, is it?
 
@@ -21,11 +21,11 @@ The value of a **Constant** can be changed at any time (even when a Sequence is 
 
 Note that the calculated value of an **Expression** is shown in braces next to the **Expression** defining it. The value is shown in green if valid, and orange if not. Note that **Constant** (and **Variable**) names are *case sensitive*, as in the definition of 'E' in the screenshot above.
 
-**Constants** have block scope, which means that a **Constant** has a value in the instruction set that includes it, as well as instruction sets "below" it in the hierarchy of instructions (i.e. nested within the block in which it appears).  If a **Constant** X is defined in one instruction set, and a **Constant** X is also defined in a "lower" instruction set, the closest definition of X is used when that **Constant** is referenced.  Many computer languages use block scope for variables.
-
-**Global Constants** are **Constants** that are valid everywhere in a sequence; they are set up in the Sequencer Powerups plugin page.  **Global Constants** can, individually, be set up to be valid for all NINA Profiles or on a per-Profile basis.
+**Constants** have block scope, which means that a **Constant** has a value in the instruction set that includes it, as well as instruction sets "below" it in the hierarchy of instructions (i.e. nested within the block in which it appears).  If a **Constant** X is defined in one instruction set, and a **Constant** X is also defined in a "lower" instruction set, the closest definition of X is used when that **Constant** is referenced.  Many computer languages use block scope for variables.  Below, the **Take Exposure +** instruction takes exposure time from the definition of `A` inside the same instruction set.
 
 ![](BlockScope.png)
+
+**Global Constants** are **Constants** that are valid everywhere in a sequence; they are set up in the Sequencer Powerups plugin page. They are described in more detail elsewhere in this document.
 
 ## **Variables**
 
@@ -70,7 +70,7 @@ The **If Failed** instruction, for example, executes its **Embedded Instructions
 
 ![](CapturedDrag.png)
 
-And here's how it looks with the **Run Autofocus** captured, and with a **Send to Pushover** instruction added as an **Embedded Instruction**.   If the **Run Autofocus** fails, the message will be sent by Pushover...
+And here's how it looks with the **Run Autofocus** as the **Captured Instruction**, and with a **Send to Pushover** instruction added as an **Embedded Instruction**.   If the **Run Autofocus** fails, the message will be sent by Pushover...
 
 ![](CapturedAF.png)
 
