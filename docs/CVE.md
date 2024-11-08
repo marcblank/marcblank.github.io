@@ -74,11 +74,11 @@ And here's how it looks with the **Run Autofocus** as the **Captured Instruction
 
 ![](CapturedAF.png)
 
-## **If and IfThenElse (instructions), When (trigger), and Loop While (condition)**
+## **If, If/Then/Else (instructions), When (trigger), Loop While (condition), and For Each (instruction)**
 
-### If and IfThenElse
+### If and If/Then/Else
 
-The **If** instruction evaluates the given **Expression** and runs the specified instructions if that **Expression** is not false (not 0 or "false").  The **IfThenElse** instruction adds the ability to specify instructions to execute if the **Expression** is false (or 0).
+The **If** instruction evaluates the given **Expression** and runs the specified instructions if that **Expression** is not false (not 0 or "false").  The **If/Then/Else** instruction adds the ability to specify instructions to execute if the **Expression** is false (or 0).
 
 ![](If.png)
 
