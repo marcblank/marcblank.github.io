@@ -111,7 +111,34 @@ Here's an interesting example that uses these instructions to implement a timeou
 
 Presumably, when this loop finishes, another test of **GuideScopeOpen** will be used to determine whether the opening procedure has succeeded. If not, perhaps a **Ground Station plugin** message will be sent, or the sequence terminated.
 
-## Constant/Variable Container
+### For Each
+
+The **For Each** instruction allows for the creation of loops through lists of Expression values; the current implementation seems to work properly, though the UI is somewhat constrained.  When you load a **For Each** instruction into the sequencer, and open the container, you'll see this:
+
+![](ForEach1.png)
+
+The **Assign Variables** instruction is created automatically, and should be left where it is - at the top of the instructions inside **For Each**.
+
+In a **For Each** instruction, you can specify a **Variable** to use, and then a series of values for that **Variable**; each, in turn, is assigned to the **Variable** on each iteration of the loop.  In the screenshot, the **Variable** `ExpTime` is set, in turn, to `30, 60, 120, 180, 240, and 300.`
+`
+*Note: You must define the **Variable** before the **For Each** instruction, as shown below*  
+
+*Note: **Expressions** can be used for values; however, at the moment, the current value of the **Expression** is not shown in the UI*
+
+*Note: The "progress" indicator the screenshot below shows "0/6", indicating that there are six iterations of the loop to be executed.*
+
+![](ForEach2.png)
+
+It's possible to assign any number of **Variables** in each iteration of the loop.  The syntax (see the screenshot below) is that **Variable** names are separated by a comma, and that sets of assigned values are separated by a semicolon.  In the example below, the **Variables** `ExpTime` and `Gain` are set each time through the loop first to 30 and 0, respectively, then to 60 and 0, then to 120 and 100, etc.
+
+![](ForEach3.png)
+
+**For Each** instructions can be nested (of course).  The sequence below will image 20 darks at 8 different exposure times and 2 different gains.
+
+![](ForEach4.png)
+
+
+### Constant/Variable Container
 
 A **Constant/Variable Container** is a special kind of container that can hold only **Constant**, **Variable**, and **Annotation** instructions.  Its intended use is to "clean up" sequences with many **Constant** and **Variable** definitions.  What makes this container special is that **Constants** and **Variables** defined within it *act as though they were defined at the level of the container (or **Template by Reference**) that they are enclosed in*.
 
@@ -171,7 +198,9 @@ RoofStatus constants: **RoofOpen**, **RoofNotOpen**, **RoofCannotOpenOrRead** (n
 
 **Safety Monitor** data: **IsSafe**
 
-**Telescope (Mount)** data: **Altitude**, **Azimuth**, **RightAscension**, **Declination**, **AtPark**
+**Telescope (Mount)** data: **Altitude**, **Azimuth**, **RightAscension**, **Declination**, **AtPark**, **SideOfPier**
+
+SideOfPier constants: **PierEast**, **PierWest**, **PierUnknown**
 
 ## **Odds and Ends**
 
