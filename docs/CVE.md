@@ -253,8 +253,8 @@ These are the valid functions that can be used in Expressions.
 | `Sqrt`    | Returns the square root of the specified number |
 | `Tan`    | Returns the tangent of the specified angle
 | `Truncate`    | Calculates an integral part of a number |
-| `if`    | Returns whether an element is in a set of values - if(expr, then, else) |
-| `in`    | Returns a value based on a condition |
+| `if`    | Returns either then or else depending on whether expr is true or not - if(expr, then, else) |
+| `in`    | Returns true or false depending on whether expr is one of the following - in(expr, a, b, c) |
 
 | Date/Time      | Description                          |
 | ----------- | ------------------------------------ |
