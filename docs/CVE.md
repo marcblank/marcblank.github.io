@@ -19,9 +19,9 @@ The value of a **Constant** can be changed at any time (even when a Sequence is 
 
 ![](Constants Screen.png)
 
-Note that the calculated value of an **Expression** is shown in braces next to the **Expression** defining it. The value is shown in green if valid, and orange if not. Note that **Constant** (and **Variable**) names are *case sensitive*, as in the definition of 'E' in the screenshot above.
+Note that the calculated value of an **Expression** is shown in braces next to the **Expression** defining it. The value is shown in green if valid, and orange if not. Note that **Constant** (and **Variable**) names are *case sensitive*.
 
-**Constants** have block scope, which means that a **Constant** has a value in the instruction set that includes it, as well as instruction sets "below" it in the hierarchy of instructions (i.e. nested within the block in which it appears).  If a **Constant** X is defined in one instruction set, and a **Constant** X is also defined in a "lower" instruction set, the closest definition of X is used when that **Constant** is referenced.  Many computer languages use block scope for variables.  Below, the **Take Exposure +** instruction takes exposure time from the definition of `A` inside the same instruction set.
+**Constants** have **block scope**, which means that a **Constant** has a value in the instruction set that includes it, as well as instruction sets "below" it in the hierarchy of instructions (i.e. nested within the "block" of instructions in which it appears).  If a **Constant** X is defined in one instruction set, and a **Constant** X is also defined in a "lower" instruction set, the closest definition of X is used when that **Constant** is referenced.  Many computer languages use block scope for variables.  Below, the **Take Exposure +** instruction takes exposure time from the definition of `A` inside the same instruction set.
 
 ![](BlockScope.png)
 
@@ -74,7 +74,7 @@ And here's how it looks with the **Run Autofocus** as the **Captured Instruction
 
 ![](CapturedAF.png)
 
-## **If, If/Then/Else (instructions), When (trigger), Loop While (condition), and For Each (instruction)**
+## **If, If/Then/Else (instructions), When (trigger), Loop While (condition), Wait Until (instruction) and For Each (instruction)**
 
 ### If and If/Then/Else
 
@@ -110,6 +110,12 @@ Here's an interesting example that uses these instructions to implement a timeou
 ![](TimeLoop.png)
 
 Presumably, when this loop finishes, another test of **GuideScopeOpen** will be used to determine whether the opening procedure has succeeded. If not, perhaps a **Ground Station plugin** message will be sent, or the sequence terminated.
+
+### Wait Until
+
+**Wait Until** is complementary to **Loop While**.  The instruction will wait until the given **Expression** is "true" (no longer "false" or 0).
+
+Here’s an example of a very simple instruction set using **Variable**, **Set Variable**, and **Loop While**.  Note that the **Variable** instruction needs to be outside the loop; otherwise the `Lp` variable will be reset to 10 every time the loop is restarted!
 
 ### For Each
 
