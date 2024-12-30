@@ -176,7 +176,7 @@ The following Variable/Constant names are reserved:
 
 The following **Device Data** is available if the associated device is connected in NINA.  Note that this list is added to frequently, often upon request by users.
 
-**Astrometry** data: **SunAltitude**, **MoonAltitude** (no device needed)
+**Astrometry** data: **SunAltitude**, **SunAzimuth**, **MoonAltitude** (no device needed)
 
 **Camera** data: **SensorTemp**
 
@@ -207,6 +207,10 @@ RoofStatus constants: **RoofOpen**, **RoofNotOpen**, **RoofCannotOpenOrRead** (n
 **Telescope (Mount)** data: **Altitude**, **Azimuth**, **RightAscension**, **Declination**, **AtPark**, **SideOfPier**
 
 SideOfPier constants: **PierEast**, **PierWest**, **PierUnknown**
+
+**Target** data: **TargetName** (if a Target is being used)
+
+**Target Scheduler Plugin** data:  **TS_TargetName**, **TS_ProjectName**, **TS_WaitTime** (Note: These are available depending on whether Target Scheduler has published those values)
 
 ## **Odds and Ends**
 

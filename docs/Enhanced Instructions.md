@@ -41,6 +41,12 @@ Slew to RA/Dec (or Alt/Az) using an **Expression** to specify decimal coordinate
 
 ![](Slew.png)
 
+## Smart Subframe Exposure +
+
+This is an enhancement to **Smart Exposure +** in which a subframe can be specified.  There are two options - ROI % or Dimensions, as shown below.  Note that a warning will be shown if the connected camera does not support subframe exposures.
+
+![](SmartSubframe.png)
+
 
 ## External Script +
 
