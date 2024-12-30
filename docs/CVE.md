@@ -38,7 +38,7 @@ Just as in a procedural computer language, if you are looping through an instruc
 
 ### Variable Instructions
 
-**Variable** : Creates and defines the initial value of a **Variable** *when it is executed*.
+**Variable** : Creates and defines the initial value of a **Variable** *when it is executed*.  **Variables** can have values that are either numbers or strings; strings must be enclosed in quotation marks (e.g. 'Value')
 
 **Set Variable** : Redefines the value of a previously created **Variable**
 
