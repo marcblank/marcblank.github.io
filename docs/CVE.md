@@ -36,6 +36,8 @@ The **Set Variable** instruction can be used to change the value of a previously
 
 Just as in a procedural computer language, if you are looping through an instruction set, any **Variables** defined in that instruction set are reset to having no value before the loop repeats!
 
+*Note: During sequence execution, the value of a **Variable** can be changed by editing the "Currently" field in the instruction.  If the sequence is also modifying the **Variable**, the results are unpredictable*
+
 ### Variable Instructions
 
 **Variable** : Creates and defines the initial value of a **Variable** *when it is executed*.  **Variables** can have values that are either numbers or strings; strings must be enclosed in quotation marks (e.g. 'Value')
