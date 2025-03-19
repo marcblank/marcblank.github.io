@@ -29,6 +29,8 @@ Now, save the Template as you usually would, by clicking on the floppy disc icon
 
 *Extra credit for recognizing the idiocy of where I added the Open Flat Panel Cover instruction*
 
+*Note: Template by Reference does not work when loading a startup sequence from the command line!*
+
 ## How Does This Work?
 
 To use **Template by Reference** to its fullest potential, it helps to understand how it works. And it's really very simple. The **Template by Reference** instruction simply *refers* to the specified Template by its name.
