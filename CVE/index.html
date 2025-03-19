@@ -1,0 +1,1232 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../DArrays/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Constants/Variables/Expressions - Sequencer Powerups</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#constantsvariablesexpressions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sequencer Powerups" class="md-header__button md-logo" aria-label="Sequencer Powerups" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sequencer Powerups
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Constants/Variables/Expressions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Constants/Variables/Expressions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../DArrays/" class="md-tabs__link">
+        
+  
+    
+  
+  Arrays
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../DIY%20Meridian%20Flip/" class="md-tabs__link">
+        
+  
+    
+  
+  DIY Meridian Flip
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Enhanced%20Instructions/" class="md-tabs__link">
+        
+  
+    
+  
+  Enhanced Instructions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Safety/" class="md-tabs__link">
+        
+  
+    
+  
+  Safety
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../TBR/" class="md-tabs__link">
+        
+  
+    
+  
+  Template by Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Triggers/" class="md-tabs__link">
+        
+  
+    
+  
+  Triggers
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Z/" class="md-tabs__link">
+        
+  
+    
+  
+  This &amp; That
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../xternal%20Script%20%2B/" class="md-tabs__link">
+        
+  
+    
+  
+  External Script +
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sequencer Powerups" class="md-nav__button md-logo" aria-label="Sequencer Powerups" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sequencer Powerups
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Constants/Variables/Expressions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Constants/Variables/Expressions
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-valid-in-an-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Valid in an Expression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constants
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable Instructions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedded-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedded Instructions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#captured-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Captured Instructions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-ifthenelse-instructions-when-trigger-loop-while-condition-wait-until-instruction-and-for-each-instruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      If, If/Then/Else (instructions), When (trigger), Loop While (condition), Wait Until (instruction) and For Each (instruction)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="If, If/Then/Else (instructions), When (trigger), Loop While (condition), Wait Until (instruction) and For Each (instruction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-and-ifthenelse" class="md-nav__link">
+    <span class="md-ellipsis">
+      If and If/Then/Else
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when" class="md-nav__link">
+    <span class="md-ellipsis">
+      When
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#warnings-for-the-when-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Warnings for the When Trigger
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loop-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loop While
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-until" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wait Until
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-each" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Each
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constantvariable-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constant/Variable Container
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imaging-page-dockable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imaging Page Dockable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reserved-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reserved Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odds-and-ends" class="md-nav__link">
+    <span class="md-ellipsis">
+      Odds and Ends
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-functions-and-operators-in-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix: Functions and Operators in Expressions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DArrays/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DIY%20Meridian%20Flip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DIY Meridian Flip
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enhanced%20Instructions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enhanced Instructions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Safety/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Safety
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TBR/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template by Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Triggers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triggers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Z/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    This &amp; That
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xternal%20Script%20%2B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Script +
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="constantsvariablesexpressions"><strong>Constants/Variables/Expressions</strong></h1>
+<h2 id="expressions"><strong>Expressions</strong></h2>
+<p>An <strong>Expression</strong> in Sequencer Powerups is pretty much any kind of mathematical expression using numbers (fixed or floating point), <strong>Constants</strong>, and <strong>Variables</strong>, plus <strong>Device Data</strong> (various data from your devices); currently supported <strong>Device Data</strong> values are documented below.  <em>Note that </em><em>Device Data</em><em> values are only available if the appropriate gear is connected!</em></p>
+<p><strong>Expressions</strong> can be used in "enhanced" instructions (enhanced in the sense that they accept <strong>Expressions</strong> in place of numbers), as well as some new instructions like <strong>If</strong> and <strong>Loop While</strong>. Enhanced instructions are named with "+" appended to the instruction name (e.g. <strong>Take Exposure +</strong>, <strong>Cool Camera +</strong>, etc).
+So, for example, in <strong>Take Exposure +</strong>, the value of Exposure Time might be <code>10</code> or <code>ExpTime</code> (assuming <code>ExpTime</code> is defined as a <strong>Constant</strong> or <strong>Variable</strong>; see below) or even <code>ExpTime / 3</code> or a conditional like <code>if (rgb, ExpTime, ExpTime*2/3)</code>.  In the latter case, the "if" predicate takes three arguments: something can be tested for true/false (1/0), a value if "true", and a value if "false".</p>
+<h3 id="whats-valid-in-an-expression">What's Valid in an Expression</h3>
+<p>Valid tokens in <strong>Expressions</strong> include numbers, parentheses, function and operator names (see <a href="#appendix-functions-and-operators-in-expressions">Appendix</a>), <strong>Constant</strong> and <strong>Variable</strong> names, the names of gauges, switches, and other <strong>Device Data</strong> (if these devices are connected in NINA), and the reserved names <strong>TIME</strong>,  <strong>SAFE</strong>, and <strong>EXITCODE</strong> (see <a href="#reserved-variables">ReservedVariables</a>).</p>
+<h2 id="constants"><strong>Constants</strong></h2>
+<p>A <strong>Constant</strong> in Powerups is created using the <strong>Constant</strong> instruction; enter a name for the <strong>Constant</strong> and a value, which can be any valid expression (if the value refers to another <strong>Constant</strong>, that <strong>Constant</strong> needs to have been defined in the same instruction set or in a parent of the instruction set).  The <strong>Constant</strong> instruction is <em>self-executing</em> and continuously re-evaluated!  This means that <strong>Constants</strong> are "live" as they are read into the sequencer, and their values update as required, based on changes to other <strong>Constants</strong> that might have been referred to.  When the Sequencer executes a <strong>Constant</strong> instruction, literally nothing happens!  <em>Note: A Constant definition cannot reference Variables and Device Data, as these - pretty much by definition - can change at any time!</em></p>
+<p>The value of a <strong>Constant</strong> can be changed at any time (even when a Sequence is running) and all references to that <strong>Constant</strong> are updated semi-immediately (within a couple seconds).  It's not a very good constant, is it?</p>
+<p><img alt="" src="../Constants%20Screen.png" /></p>
+<p>Note that the calculated value of an <strong>Expression</strong> is shown in braces next to the <strong>Expression</strong> defining it. The value is shown in green if valid, and orange if not. Note that <strong>Constant</strong> (and <strong>Variable</strong>) names are <em>case sensitive</em>.</p>
+<p><strong>Constants</strong> have <strong>block scope</strong>, which means that a <strong>Constant</strong> has a value in the instruction set that includes it, as well as instruction sets "below" it in the hierarchy of instructions (i.e. nested within the "block" of instructions in which it appears).  If a <strong>Constant</strong> X is defined in one instruction set, and a <strong>Constant</strong> X is also defined in a "lower" instruction set, the closest definition of X is used when that <strong>Constant</strong> is referenced.  Many computer languages use block scope for variables.  Below, the <strong>Take Exposure +</strong> instruction takes exposure time from the definition of <code>A</code> inside the same instruction set.</p>
+<p><img alt="" src="../BlockScope.png" /></p>
+<p><strong>Global Constants</strong> are <strong>Constants</strong> that are valid everywhere in a sequence; they are set up in the Sequencer Powerups plugin page. They are described in more detail elsewhere in this document.</p>
+<h2 id="variables"><strong>Variables</strong></h2>
+<p>A <strong>Variable</strong> in Powerups is more similar to a traditional computer language variable; it also uses "block scope" (except for <strong>Global Variables</strong>; see below).   A <strong>Variable</strong> is defined using the <strong>Variable</strong> instruction, which is entirely analogous to the <strong>Constant</strong> instruction, except that <strong>Variable</strong> definitions are <em>not</em> self-executing - the <strong>Variable</strong> does not have a value prior to the execution of the <strong>Variable</strong> instruction.   References to a <strong>Variable</strong> "below" it in the code will show <code>Not evaluated: &lt;varname&gt;</code> until the <strong>Variable</strong> instruction gets executed.
+The <strong>Set Variable</strong> instruction can be used to change the value of a previously defined <strong>Variable</strong>.  For a value, any <strong>Expression</strong> can be used - including the use of <strong>Constants</strong> and <strong>Variables</strong> that have been previously defined.  The simplest form of this might this:</p>
+<p><img alt="" src="../Variables.png" /></p>
+<p>Just as in a procedural computer language, if you are looping through an instruction set, any <strong>Variables</strong> defined in that instruction set are reset to having no value before the loop repeats!</p>
+<p><em>Note: During sequence execution, the value of a </em><em>Variable</em><em> can be changed by editing the "Currently" field in the instruction.  If the sequence is also modifying the </em><em>Variable</em><em>, the results are unpredictable</em></p>
+<h3 id="variable-instructions">Variable Instructions</h3>
+<p><strong>Variable</strong> : Creates and defines the initial value of a <strong>Variable</strong> <em>when it is executed</em>.  <strong>Variables</strong> can have values that are either numbers or strings; strings must be enclosed in quotation marks (e.g. 'Value')</p>
+<p><strong>Set Variable</strong> : Redefines the value of a previously created <strong>Variable</strong></p>
+<p><strong>Set Variable to Date</strong> : Redefines the value of a previously created <strong>Variable</strong> to a date and time, using the same mechanism as the built-in <strong>Loop Until Time</strong> interface (i.e. clock time, and time offset from meridian and the various forms of sunrise and sunset).  <em>Note: Internally, dates are represented by an integer, the number of seconds from midnight January 1, 1970 UTC</em></p>
+<p><strong>Global Variable</strong> : Creates and defines a <strong>Variable</strong> that can be used anywhere in a sequence, <em>once the instruction has been executed</em>.  <strong>Global Variables</strong> are the <em>only</em> variables that can be used across sequencer sections (where a section is one of "Start Area", "Target Area", and "End Area").  The value of a <strong>Global Variable</strong> can be changed with either of the two instructions above (<strong>Set Variable</strong> and <strong>Set Variable to Date</strong>).</p>
+<h2 id="embedded-instructions">Embedded Instructions</h2>
+<p>Many Powerups include what I call <strong>Embedded Instructions</strong>; these are NINA instructions that are <em>embedded</em> within the Powerups instruction, in much the same way that instructions are embedded in NINA's instruction sets.  A typical example is the <strong>If</strong> instruction (documented just below).  When an <strong>If</strong> is dragged into a sequence, it looks like this:</p>
+<p><img alt="" src="../EmbeddedEmpty.png" /></p>
+<p>To add <strong>Embedded Instructions</strong>, you simply drag them into the space marked "Conditional instructions go here", as below.  In the following example, the two embedded instructions will be executed when WindGust is greater than 5.</p>
+<p><img alt="" src="../EmbeddedOpen.png" /></p>
+<p>To save screen real estate, <strong>Embedded Instructions</strong> can be hidden with the arrow at the upper left of the instruction.</p>
+<p><img alt="" src="../EmbeddedArrow.png" /></p>
+<h2 id="captured-instructions">Captured Instructions</h2>
+<p>Another concept Powerups uses is the idea of a <strong>Captured Instruction</strong>.  Instructions that use this concept work on another NINA instruction, executing it and (usually) acting on the result.  Here's one...</p>
+<p><img alt="" src="../CapturedEmpty.png" /></p>
+<p>The <strong>If Failed</strong> instruction, for example, executes its <strong>Embedded Instructions</strong> if the execution of the <strong>Captured Instruction</strong> fails.   Here I am dragging a <strong>Run Autofocus</strong> instruction into the <strong>If Failed</strong>.</p>
+<p><img alt="" src="../CapturedDrag.png" /></p>
+<p>And here's how it looks with the <strong>Run Autofocus</strong> as the <strong>Captured Instruction</strong>, and with a <strong>Send to Pushover</strong> instruction added as an <strong>Embedded Instruction</strong>.   If the <strong>Run Autofocus</strong> fails, the message will be sent by Pushover...</p>
+<p><img alt="" src="../CapturedAF.png" /></p>
+<h2 id="if-ifthenelse-instructions-when-trigger-loop-while-condition-wait-until-instruction-and-for-each-instruction"><strong>If, If/Then/Else (instructions), When (trigger), Loop While (condition), Wait Until (instruction) and For Each (instruction)</strong></h2>
+<h3 id="if-and-ifthenelse">If and If/Then/Else</h3>
+<p>The <strong>If</strong> instruction evaluates the given <strong>Expression</strong> and runs the specified instructions if that <strong>Expression</strong> is not false (not 0 or "false").  The <strong>If/Then/Else</strong> instruction adds the ability to specify instructions to execute if the <strong>Expression</strong> is false (or 0).</p>
+<p><img alt="" src="../If.png" /></p>
+<h3 id="when">When</h3>
+<p>The <strong>When</strong> trigger is activated <em>when</em> the given expression is not false (not 0 or "false') and runs the specified instructions. There is a <strong>Once Only</strong> toggle in this instruction; setting this to ON will cause this trigger to run only once during execution of your sequence. There is also a <strong>Interrupt</strong> toggle; if set to 'ON' (the default), the <strong>When</strong> trigger will interrupt any instruction in progress (the check is performed approximately every 5 seconds).</p>
+<p><em>The </em><em>Interrupt</em><em> functionality of the </em><em>When</em><em> trigger is unlike traditional NINA triggers that only run between the execution of instructions!</em></p>
+<h4 id="warnings-for-the-when-trigger">Warnings for the When Trigger</h4>
+<p>If you don't somehow arrange for the <strong>Expression</strong> to become false during the execution of the included instructions, the <strong>When</strong> trigger will run every five seconds (after finishing those instructions).  If you want to keep this from happening, set the <strong>Once Only</strong> toggle to ON!</p>
+<p><img alt="" src="../When.png" /></p>
+<h3 id="loop-while">Loop While</h3>
+<p><strong>Loop While</strong> is a standard NINA "Conditional" and gets placed with other conditionals in an instruction set.   When queried (every 5 seconds or so while a sequence is running), it evaluates the given <strong>Expression</strong> and terminates the loop if the result is "false" or 0.</p>
+<p>Here’s an example of a very simple instruction set using <strong>Variable</strong>, <strong>Set Variable</strong>, and <strong>Loop While</strong>.  Note that the <strong>Variable</strong> instruction needs to be outside the loop; otherwise the <code>Lp</code> variable will be reset to 10 every time the loop is restarted!</p>
+<p><img alt="" src="../LoopWhile.png" /></p>
+<p>Note the white "i" (for "Information") icon in the <strong>Loop While</strong> instruction.  Hovering over this icon will show all of the <strong>Device Data</strong> that can be used in the <strong>Expression</strong> (this appears everywhere an <strong>Expression</strong> can be used). Here's what this might look like for you, depending on what devices you have connected at the time:</p>
+<p><img alt="" src="../InfoDropdown.png" /></p>
+<p>Here's an interesting example that uses these instructions to implement a timeout. The <strong>Loop While</strong> is basically running for up to 60 seconds OR until the <strong>confirmed</strong> <strong>Variable</strong> becomes true.  Each time through the loop, the <strong>If</strong> instruction checks whether a switch (in this case, <strong>GuideScopeOpen</strong>) has become "true"; if so, the <strong>Set Variable</strong> instruction sets <strong>confirmed</strong> to true.  This ends the loop.</p>
+<p><img alt="" src="../TimeLoop.png" /></p>
+<p>Presumably, when this loop finishes, another test of <strong>GuideScopeOpen</strong> will be used to determine whether the opening procedure has succeeded. If not, perhaps a <strong>Ground Station plugin</strong> message will be sent, or the sequence terminated.</p>
+<h3 id="wait-until">Wait Until</h3>
+<p><strong>Wait Until</strong> is complementary to <strong>Loop While</strong>.  The instruction will wait until the given <strong>Expression</strong> is "true" (no longer "false" or 0).</p>
+<p>Here’s an example of a very simple instruction set using <strong>Variable</strong>, <strong>Set Variable</strong>, and <strong>Loop While</strong>.  Note that the <strong>Variable</strong> instruction needs to be outside the loop; otherwise the <code>Lp</code> variable will be reset to 10 every time the loop is restarted!</p>
+<h3 id="for-each">For Each</h3>
+<p>The <strong>For Each</strong> instruction allows for the creation of loops through lists of Expression values; the current implementation seems to work properly, though the UI is somewhat constrained.  When you load a <strong>For Each</strong> instruction into the sequencer, and open the container, you'll see this:</p>
+<p><img alt="" src="../ForEach1.png" /></p>
+<p>The <strong>Assign Variables</strong> instruction is created automatically, and should be left where it is - at the top of the instructions inside <strong>For Each</strong>.</p>
+<p>In a <strong>For Each</strong> instruction, you can specify a <strong>Variable</strong> to use, and then a series of values for that <strong>Variable</strong>; each, in turn, is assigned to the <strong>Variable</strong> on each iteration of the loop.  In the screenshot, the <strong>Variable</strong> <code>ExpTime</code> is set, in turn, to <code>30, 60, 120, 180, 240, and 300.</code>
+`
+<em>Note: You must define the </em><em>Variable</em><em> before the </em><em>For Each</em><em> instruction, as shown below</em>  </p>
+<p><em>Note: </em><em>Expressions</em><em> can be used for values; however, at the moment, the current value of the </em><em>Expression</em><em> is not shown in the UI</em></p>
+<p><em>Note: The "progress" indicator the screenshot below shows "0/6", indicating that there are six iterations of the loop to be executed.</em></p>
+<p><img alt="" src="../ForEach2.png" /></p>
+<p>It's possible to assign any number of <strong>Variables</strong> in each iteration of the loop.  The syntax (see the screenshot below) is that <strong>Variable</strong> names are separated by a comma, and that sets of assigned values are separated by a semicolon.  In the example below, the <strong>Variables</strong> <code>ExpTime</code> and <code>Gain</code> are set each time through the loop first to 30 and 0, respectively, then to 60 and 0, then to 120 and 100, etc.</p>
+<p><img alt="" src="../ForEach3.png" /></p>
+<p><strong>For Each</strong> instructions can be nested (of course).  The sequence below will image 20 darks at 8 different exposure times and 2 different gains.</p>
+<p><img alt="" src="../ForEach4.png" /></p>
+<h3 id="constantvariable-container">Constant/Variable Container</h3>
+<p>A <strong>Constant/Variable Container</strong> is a special kind of container that can hold only <strong>Constant</strong>, <strong>Variable</strong>, and <strong>Annotation</strong> instructions.  Its intended use is to "clean up" sequences with many <strong>Constant</strong> and <strong>Variable</strong> definitions.  What makes this container special is that <strong>Constants</strong> and <strong>Variables</strong> defined within it <em>act as though they were defined at the level of the container (or </em><em>Template by Reference</em><em>) that they are enclosed in</em>.</p>
+<p>In the example below, the <strong>Constant</strong> X2 definition, using the <strong>Constant</strong> X, would be undefined if X had not been defined in the <strong>Constant/Variable</strong> container used in the <strong>Template by Reference</strong>.</p>
+<p><img alt="" src="../CVC.png" /></p>
+<p>In a regular sequential instruction set, the <strong>Variable</strong> X is not in scope when evaluating X2.</p>
+<p><img alt="" src="../CVC2.png" /></p>
+<h2 id="imaging-page-dockable">Imaging Page Dockable</h2>
+<p>There is a dockable panel in the Imaging page of NINA that can be used to "watch" any number of <strong>Expressions</strong> in real-time.  These can include any of your <strong>Constants</strong>, <strong>Variables</strong>, <strong>Device Data</strong>, etc.   Basically, an all-in-one data display for Powerups.</p>
+<p><img alt="" src="../Panel.png" /></p>
+<h2 id="reserved-variables">Reserved Variables</h2>
+<p>The following Variable/Constant names are reserved:</p>
+<p><strong>SAFE</strong> &ensp; - &ensp; See the documentation for "Safety"</p>
+<p><strong>TIME</strong> &ensp; - &ensp; The current time in seconds since NINA was started, with an accuracy of 10 seconds or so. This is not intended, obviously, for highly accurate timing, but can be used, for example, with the <strong>When</strong> trigger to take actions at various intervals.</p>
+<p><strong>EXITCODE</strong> &ensp; - &ensp; The EXITCODE from a call to the <strong>External Script +</strong> command (see later in this document)</p>
+<h2 id="device-data">Device Data</h2>
+<p>The following <strong>Device Data</strong> is available if the associated device is connected in NINA.  Note that this list is added to frequently, often upon request by users.</p>
+<p><strong>Astrometry</strong> data: <strong>SunAltitude</strong>, <strong>SunAzimuth</strong>, <strong>MoonAltitude</strong> (no device needed)</p>
+<p><strong>Camera</strong> data: <strong>SensorTemp</strong></p>
+<p>Camera data (hidden): <strong>camera__PixelSize, camera__XSize, camera__YSize, camera__CoolerPower, camera__CoolerOn</strong></p>
+<p><strong>Dome</strong> data:  <strong>DomeStatus, DomeAzimuth</strong></p>
+<p>DomeStatus constants: <strong>ShutterNone, ShutterOpen, ShutterClosed, ShutterOpening, ShutterClosing, ShutterError</strong></p>
+<p><strong>Filter Wheel</strong> data: <strong>CurrentFilter</strong></p>
+<p>CurrentFilter constants: <strong>Filter_name</strong>, where "name" is the name of the filter with all non-alphanumeric characters removed.  So a filter named "My IR Filter" must be referred to as Filter_MyIRFilter.</p>
+<p><strong>Flat Device</strong> data: <strong>CoverState</strong></p>
+<p>CoverStatus constants: <strong>CoverOpen, CoverClosed, CoverNeitherOpenNorClosed, CoverUnknown, CoverError</strong></p>
+<p><strong>Last Image</strong> data: <strong>Image_HFR</strong>, <strong>Image_StarCount</strong> (if Hocus Focus is being used for star analysis, <strong>Image_FWHM</strong> and <strong>Image_Eccentricity</strong> are also available)</p>
+<p><strong>Roof</strong> data: <strong>RoofStatus</strong></p>
+<p>RoofStatus constants: <strong>RoofOpen</strong>, <strong>RoofNotOpen</strong>, <strong>RoofCannotOpenOrRead</strong> (note: <strong>RoofStatus</strong> requires the use of a RoofStatus file that can be defined in the Powerups settings)</p>
+<p><strong>Rotator</strong> data: <strong>RotatorMechanicalPosition</strong>, <strong>RotatorPosition</strong> (these are the same)</p>
+<p><strong>Safety Monitor</strong> data: <strong>IsSafe</strong></p>
+<p><strong>Telescope (Mount)</strong> data: <strong>Altitude</strong>, <strong>Azimuth</strong>, <strong>RightAscension</strong>, <strong>Declination</strong>, <strong>AtPark</strong>, <strong>SideOfPier</strong></p>
+<p>SideOfPier constants: <strong>PierEast</strong>, <strong>PierWest</strong>, <strong>PierUnknown</strong></p>
+<p><strong>Target</strong> data: <strong>TargetName</strong> (if a Target is being used)</p>
+<p><strong>Target Scheduler Plugin</strong> data:  <strong>TS_TargetName</strong>, <strong>TS_ProjectName</strong>, <strong>TS_WaitTime</strong> (Note: These are available depending on whether Target Scheduler has published those values)</p>
+<h2 id="odds-and-ends"><strong>Odds and Ends</strong></h2>
+<p>•   Wherever <strong>Expressions</strong> are used, the current value of that <strong>Expression</strong> is shown in brackets { }, in green if valid and in orange if invalid (not defined, etc.)  These colors are currently fixed, and only appear nicely in certain color schemes; sorry about that!  Here's a rather useless example:</p>
+<p><img alt="" src="../GreenOrange.png" /></p>
+<p>•   Up to 10 <strong>Global Constants</strong> can be defined on the plugin page; each of them can be set for <em>all</em> of your NINA Profiles, or can be set on a per-profile basis.</p>
+<p><img alt="" src="../Globals.png" /></p>
+<p>•   Hovering over an <strong>Expression</strong> will show the current value of any <strong>Constants</strong> and <strong>Variables</strong> that are used in that <strong>Expression</strong>.  In the example below, the <strong>Constant</strong> A is defined "Here" (meaning in the current block) and has a value of 8; the <strong>Constant</strong> CHATTER is defined globally and has a value of 200.</p>
+<p><img alt="" src="../Dissect.png" /></p>
+<p>•   <strong>If</strong> and <strong>Loop While</strong> instructions show the current result of the <strong>Expression</strong>.</p>
+<p>•   There is a <strong>Breakpoint</strong> instruction that stops sequence execution until you press the "Continue" button that appears when a breakpoint is hit.  The <strong>Breakpoint</strong> instruction is exactly equivalent to <strong>Wait for Time Span</strong> of twelve hours.</p>
+<p><img alt="" src="../Breakpoint.png" /></p>
+<h2 id="summary"><strong>Summary</strong></h2>
+<p><strong>Constants</strong> have the same value throughout a sequence (in their scope) and do not change during sequence execution (or more precisely are not changed <em>because</em> of sequence execution).  A human can change them, and that change takes effect immediately, but the sequence itself does not change them.  <strong>Variables</strong>, on the other hand, are created and changed by sequence execution, without human intervention.  However, you can always manually change the values of both <strong>Variables</strong> and <strong>Constants</strong> during execution, just as you can reorder instructions and do other dastardly things to yout sequence (with great power comes great responsibility).  <em>Just remember that manual changes can have side effects that might be unexpected!</em></p>
+<h2 id="appendix-functions-and-operators-in-expressions"><strong>Appendix: Functions and Operators in Expressions</strong></h2>
+<p>These are the valid functions that can be used in Expressions.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Abs</code></td>
+<td>Returns the absolute value of a specified number</td>
+</tr>
+<tr>
+<td><code>Acos</code></td>
+<td>Returns the angle whose cosine is the specified number</td>
+</tr>
+<tr>
+<td><code>Asin</code></td>
+<td>Returns the angle whose sine is the specified number</td>
+</tr>
+<tr>
+<td><code>Atan</code></td>
+<td>Returns the angle whose tangent is the specified number</td>
+</tr>
+<tr>
+<td><code>Ceiling</code></td>
+<td>Returns the smallest integer greater than or equal to the specified number</td>
+</tr>
+<tr>
+<td><code>Cos</code></td>
+<td>Returns the cosine of the specified angle</td>
+</tr>
+<tr>
+<td><code>Exp</code></td>
+<td>Returns e raised to the specified power</td>
+</tr>
+<tr>
+<td><code>Floor</code></td>
+<td>Returns the largest integer less than or equal to the specified number</td>
+</tr>
+<tr>
+<td><code>Log</code></td>
+<td>Returns the logarithm the specified number</td>
+</tr>
+<tr>
+<td><code>Log10</code></td>
+<td>Returns the base 10 logarithm the specified number</td>
+</tr>
+<tr>
+<td><code>Max</code></td>
+<td>Returns the larger of two specified numbers</td>
+</tr>
+<tr>
+<td><code>Min</code></td>
+<td>Returns the lesser of two specified numbers</td>
+</tr>
+<tr>
+<td><code>Pow</code></td>
+<td>Returns the specified number raised to specified power</td>
+</tr>
+<tr>
+<td><code>Round</code></td>
+<td>Rounds a value to the nearest integer or specified number of decimal places</td>
+</tr>
+<tr>
+<td><code>Sign</code></td>
+<td>Returns a value indicating the sign of a number</td>
+</tr>
+<tr>
+<td><code>Sin</code></td>
+<td>Returns the sine of the specified angle</td>
+</tr>
+<tr>
+<td><code>Sqrt</code></td>
+<td>Returns the square root of the specified number</td>
+</tr>
+<tr>
+<td><code>Tan</code></td>
+<td>Returns the tangent of the specified angle</td>
+</tr>
+<tr>
+<td><code>Truncate</code></td>
+<td>Calculates an integral part of a number</td>
+</tr>
+<tr>
+<td><code>if</code></td>
+<td>Returns either then or else depending on whether expr is true or not - if(expr, then, else)</td>
+</tr>
+<tr>
+<td><code>in</code></td>
+<td>Returns true or false depending on whether expr is one of the following - in(expr, a, b, c)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Date/Time</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>now</code></td>
+<td>Returns the current date/time</td>
+</tr>
+<tr>
+<td><code>hour</code></td>
+<td>Returns the hour (Midnight = 0, 11PM = 23)</td>
+</tr>
+<tr>
+<td><code>minute</code></td>
+<td>Returns the minute of the hour</td>
+</tr>
+<tr>
+<td><code>day</code></td>
+<td>Returns the day of the month</td>
+</tr>
+<tr>
+<td><code>month</code></td>
+<td>Returns the month (January = 1)</td>
+</tr>
+<tr>
+<td><code>year</code></td>
+<td>Returns the year</td>
+</tr>
+<tr>
+<td><code>dow</code></td>
+<td>Returns the day of the week (Sunday = 0)</td>
+</tr>
+</tbody>
+</table>
+<p>Here are the valid operators in Expressions</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Arithmetical</code></td>
+<td>- , &ensp; + ,&ensp;  *,&ensp; /,&ensp; %</td>
+</tr>
+<tr>
+<td><code>Logical</code></td>
+<td>&amp;&amp;, &ensp; ||, &ensp;  !</td>
+</tr>
+<tr>
+<td><code>Bitwise</code></td>
+<td>&amp;, &ensp;|,&ensp; ^, &ensp;~, &ensp;&lt;&lt;,&ensp; &gt;&gt;</td>
+</tr>
+<tr>
+<td><code>Comparison</code></td>
+<td>==,&ensp;!=,&ensp; &gt;,&ensp; &lt;,&ensp; &gt;=, &ensp;&lt;=</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.hightlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
